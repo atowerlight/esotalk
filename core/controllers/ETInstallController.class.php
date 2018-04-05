@@ -298,7 +298,7 @@ protected function fatalChecks()
 	if (!version_compare(PHP_VERSION, "5.3.0", ">=")) $errors[] = sprintf(T("message.greaterPHPVersionRequired"), "5.3.0");
 
 	// Check for the MySQL extension.
-	if (!extension_loaded("mysql")) $errors[] = T("message.greaterMySQLVersionRequired");
+	// if (!extension_loaded("mysql")) $errors[] = T("message.greaterMySQLVersionRequired");
 
 	// Check file permissions.
 	$fileErrors = array();
