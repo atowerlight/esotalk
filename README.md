@@ -1,4 +1,4 @@
-## esoTalk – Fat-free forum software
+## esoTalk 
 
 **Help develop *Flarum*, esoTalk's successor. [Flarum on GitHub &raquo;](https://github.com/flarum/core)**
 
