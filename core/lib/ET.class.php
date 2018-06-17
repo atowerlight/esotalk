@@ -176,11 +176,11 @@ public static function first($event, $parameters = array())
  */
 public static function checkForUpdates()
 {
-	$json = @file_get_contents("http://esotalk.org/versions.json");
-	$packages = json_decode($json, true);
+	//$json = @file_get_contents("http://esotalk.org/versions.json");
+	//$packages = json_decode($json, true);
 
 	// Compare the installed version and the latest version. Show a message if there is a new version.
-	if (isset($packages["esoTalk"]) and version_compare($packages["esoTalk"]["version"], ESOTALK_VERSION, ">") == -1) return $packages["esoTalk"];
+	//if (isset($packages["esoTalk"]) and version_compare($packages["esoTalk"]["version"], ESOTALK_VERSION, ">") == -1) return $packages["esoTalk"];
 
 	return false;
 }
