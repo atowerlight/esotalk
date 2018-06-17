@@ -397,7 +397,24 @@ public function getConversationIDs($channelIDs = array(), $searchString = "", $o
 
 		// Run a query against the posts table to get matching conversation IDs.
 		$fulltextString = implode(" ", $this->fulltext);
-		$fulltextQuery = ET::SQL()
+		if(preg_match('/[\x80-\xff]/i',$fulltextString))
+		{
+			
+			$fulltextQuery = ET::SQL()
+			->select("DISTINCT conversationId")
+			->from("post")
+			->where("(title LIKE :fulltext) OR (content LIKE :fulltext)")
+			->where($idCondition)
+			->orderBy("conversationId DESC")
+			->bind(":fulltext", "%".$fulltextString."%")
+			->bind(":fulltextOrder", $fulltextString);
+		
+
+
+		}
+		else
+		{
+			$fulltextQuery = ET::SQL()
 			->select("DISTINCT conversationId")
 			->from("post")
 			->where("MATCH (title, content) AGAINST (:fulltext IN BOOLEAN MODE)")
@@ -405,6 +422,7 @@ public function getConversationIDs($channelIDs = array(), $searchString = "", $o
 			->orderBy("MATCH (title, content) AGAINST (:fulltextOrder) DESC")
 			->bind(":fulltext", $fulltextString)
 			->bind(":fulltextOrder", $fulltextString);
+		}
 
 		$this->trigger("fulltext", array($fulltextQuery, $this->fulltext));
 
