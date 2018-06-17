@@ -170,9 +170,21 @@ public function getSearchResultsCount($conversationId, $search)
  */
 private function whereSearch(&$sql, $search)
 {
+	$fulltextString = ($s = spiltWords($search)) ? $s :$search;
+	$KeywordArray = explode(" ", $fulltextString);
+	$like = '';
+	$count = count($KeywordArray);
+	foreach ($KeywordArray as $key => $value){
+		$like .= "(content LIKE '%$value%')";
+		if( ET::$session->user )
+			$like .= " OR (content LIKE '%$value%')";
+		if ( $key+1 != $count ){
+			$like .= " OR ";
+		}
+	}
 	if(preg_match('/[\x80-\xff]/i',$search))
 	{
-		$sql->where("content LIKE :search");
+		$sql->where($like);
 	}
 	else
 	{
