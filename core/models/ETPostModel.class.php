@@ -170,12 +170,21 @@ public function getSearchResultsCount($conversationId, $search)
  */
 private function whereSearch(&$sql, $search)
 {
-	$sql->where("MATCH (content) AGAINST (:search IN BOOLEAN MODE)")
-		->where("deleteMemberId IS NULL")
-		->bind(":search", $search);
+	if(preg_match('/[\x80-\xff]/i',$search))
+	{
+		$sql->where("content LIKE :search");
+	}
+	else
+	{
+		$sql->where("MATCH (content) AGAINST (:search IN BOOLEAN MODE)")
+		->where("MATCH (title) AGAINST (:search IN BOOLEAN MODE)");
+	}
+	$sql->where("deleteMemberId IS NULL")
+		->bind(":search", "%".$search."%");
 
 	$this->trigger("whereSearch", array($sql, $search));
 }
+
 
 
 /**
