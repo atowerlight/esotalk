@@ -397,12 +397,14 @@ public function getConversationIDs($channelIDs = array(), $searchString = "", $o
 
 		// Run a query against the posts table to get matching conversation IDs.
 		$fulltextString = implode(" ", $this->fulltext);
-		$fulltextString = ($s = spiltWords($fulltextString)) ? $s :$fulltextString;
-		$KeywordArray = explode(" ", $fulltextString);
-		$this->fulltext = $KeywordArray;
-		$like = '';
-		$count = count($KeywordArray);
-		foreach ($KeywordArray as $key => $value){
+		if(preg_match('/[\x80-\xff]/i',$fulltextString))
+		{
+			$fulltextString = ($s = spiltWords($fulltextString)) ? $s :$fulltextString;
+			$KeywordArray = explode(" ", $fulltextString);
+			$this->fulltext = $KeywordArray;
+			$like = '';
+			$count = count($KeywordArray);
+			foreach ($KeywordArray as $key => $value){
 			$like .= "(title LIKE '%$value%')";
 			if( ET::$session->user )
 				$like .= " OR (content LIKE '%$value%')";
@@ -410,8 +412,6 @@ public function getConversationIDs($channelIDs = array(), $searchString = "", $o
 				$like .= " OR ";
 			}
 		}
-		if(preg_match('/[\x80-\xff]/i',$fulltextString))
-		{
 			
 			$fulltextQuery = ET::SQL()
 			->select("DISTINCT conversationId")
