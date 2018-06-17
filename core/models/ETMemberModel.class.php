@@ -247,6 +247,9 @@ public function validateUsername($username, $checkForDuplicate = true)
 {
 	// Make sure the name isn't a reserved word.
 	if (in_array(strtolower($username), self::$reservedNames)) return "nameTaken";
+	
+	//fitting
+	if(preg_match('/[<>\'\\"\s]/i', $username)) return "invalidUsername";
 
 	// Make sure the username is not too small or large.
 	$length = mb_strlen($username, "UTF-8");
