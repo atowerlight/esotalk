@@ -54,7 +54,7 @@ if (!function_exists("conversationURL")) {
  */
 function conversationURL($conversationId, $title = "")
 {
-	return $conversationId.(($title = slug($title)) ? "-$title" : "");
+	return $conversationId;
 }
 
 }
@@ -74,7 +74,7 @@ if (!function_exists("memberURL")) {
  */
 function memberURL($memberId, $username = "", $pane = "")
 {
-	return "member/".($pane ? "$pane/" : "").$memberId.(($username = slug($username)) ? "-$username" : "");
+	return "member/".($pane ? "$pane/" : "").$memberId;
 }
 
 }
