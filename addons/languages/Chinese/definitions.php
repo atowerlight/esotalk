@@ -81,7 +81,6 @@ $definitions["Back to conversation"] = "返回到话题";
 $definitions["Back to member"] = "返回到到会员";
 $definitions["Back to members"] = "返回到会员列表";
 $definitions["Back to search"] = "返回到引导页";
-$definitions["Back to administration"] = "返回到管理页";
 $definitions["Background color"] = "背景颜色";
 $definitions["Background image"] = "背景图片";
 $definitions["Base URL"] = "网站网址:";
@@ -95,7 +94,6 @@ $definitions["Change %s's Permissions"] = "更改%s的权限";
 $definitions["Change avatar"] = "更换头像";
 $definitions["Change Channel"] = "更换节点";
 $definitions["Change channel"] = "更换节点";
-$definitions["Choose a Channel"] = "选择节点";
 $definitions["Change username"] = "更换名字";
 $definitions["Change Password or Email"] = "更改密码或邮箱";
 $definitions["Change Password"] = "更改密码";
@@ -106,6 +104,7 @@ $definitions["Channel List"] = "节点列表";
 $definitions["Channel title"] = "节点名字";
 $definitions["Channel slug"] = "节点链接";
 $definitions["Channels"] = "节点";
+$definitions["Choose a Channel"] = "选择节点";
 $definitions["Choose a secure password of at least %s characters"] = "请设置一个至少%s字符的安全密码";
 $definitions["Choose what people will see when they first visit your forum."] = "默认显示方式";
 $definitions["Click on a member's name to remove them."] = "删除选中的成员.";
@@ -151,12 +150,15 @@ $definitions["Editing permissions"] = "编辑权限";
 $definitions["Email me when I'm added to a private conversation"] = "收到私人话题时，邮件通知我";
 $definitions["Email me when someone mentions me in a post"] = "有人提到我时，邮件通知我";
 $definitions["Email me when someone posts in a conversation I have followed"] = "我关注的话题有新动态时，邮件通知我";
-$definitions["Email"] = "Email";
+$definitions["Email me when there is a new post by a member I have followed"] = "我关注的人发新帖时，邮件通知我";
+$definitions["Email me when someone posts in a channel I have followed"] = "有人在我关注的节点发帖时，邮件通知我";
+
+$definitions["Email"] = "电子邮件";
 $definitions["Enable"] = "启用";
 $definitions["Enabled"] = "激活";
 $definitions["Enter a conversation title"] = "请输入标题";
 $definitions["Error"] = "出错了";
-$definitions["esoTalk version"] = "esoTalk version";
+$definitions["esoTalk version"] = "esoTalk 版本";
 $definitions["Everyone"] = "所有人";
 
 $definitions["Fatal Error"] = "出了个致命的错误!";
@@ -205,6 +207,7 @@ $definitions["Home page"] = "首页";
 $definitions["HTML is allowed."] = "允许HTML";
 
 $definitions["If you run into any other problems or just want some help with the installation, feel free to ask for assistance at the <a href='%s'>esoTalk support forum</a>."] = "如果你有问题需要帮助，你可以到<a href='%s'>esoTalk论坛寻求帮助</a>";
+$definitions["Ignore conversation"] = "忽略话题";
 $definitions["Install esoTalk"] = "安装esoTalk";
 $definitions["Install My Forum"] = "安装我的论坛";
 $definitions["Installed Languages"] = "已安装语言";
@@ -235,10 +238,8 @@ $definitions["Lock"] = "锁定";
 $definitions["Log In"] = "登入";
 $definitions["Log Out"] = "注销";
 
-$definitions["Ignore conversation"] = "忽略话题";
-$definitions["Unignore conversation"] = "取消忽略";
-$definitions["Manage Channels"] = "管理节点";
 $definitions["Make member and online list visible to:"] = "设置会员列表显示";
+$definitions["Manage Channels"] = "管理节点";
 $definitions["Manage Channels"] = "管理节点";
 $definitions["Manage Groups"] = "管理群组";
 $definitions["Manage Languages"] = "管理语言";
@@ -290,7 +291,6 @@ $definitions["No preview"] = "无预览";
 $definitions["No"] = "没有";
 $definitions["Notifications"] = "通知";
 $definitions["Now"] = "最新";
-$definitions["Privacy"] = "在线状态";
 
 $definitions["OK"] = "完成";
 $definitions["Online"] = "在线";
@@ -309,10 +309,11 @@ $definitions["Plugins"] = "插件";
 $definitions["Post a Reply"] = "发表回复";
 $definitions["Post count"] = "发布统计";
 $definitions["Posts"] = "发言";
-$definitions["Powered by"] = "Powered by";
+$definitions["Powered by"] = "动力源自于";
 $definitions["Preview"] = "预览";
 $definitions["Previous"] = "前一个";
 
+$definitions["Primary color"] = "调整色彩";
 $definitions["Quote"] = "引用";
 $definitions["quote"] = "引用";
 
@@ -406,6 +407,7 @@ $definitions["View more"] = "查看";
 $definitions["View your profile"] = "查看我的个人资料";
 $definitions["View"] = "查看";
 $definitions["Viewing: %s"] = "正在查看: %s";
+$definitions["Viewing %s"] = "正在查看 %s";
 $definitions["viewingPosts"] = "<b>%s-%s</b>%s发布的";
 
 $definitions["Warning"] = "不可以这样！";
@@ -461,6 +463,7 @@ $definitions["message.gambitsHelp"] = "点击以下关键字,搜索特定内容.
 $definitions["message.gdNotEnabledWarning"] = "PHP<strong>GD模块</strong> 没有打开.<br/><small>这是编辑头像的必须模块,请联系你的主机商安装或打开它.</small>";
 $definitions["message.greaterMySQLVersionRequired"] = "请确保使用<strong>MySQL4或以上版本</strong>才能完美运行esoTalk<a href='http://php.net/manual/en/mysql.installation.php' target='_blank'>PHP中要开启mysql支持模块</a>.<br/><small>请在你的主机里安装或升级这些环境要求,以便可以正常运行esoTalk.</small>";
 $definitions["message.greaterPHPVersionRequired"] = "服务器要求<strong>PHP 5.0.0 或者更高版本</strong>才能完美运行esoTalk.<br/><small>请在你的主机里安装或升级这些环境要求,以便可以正常运行esoTalk.</small>";
+$definitions["message.groupsHelp"] = "用于对论坛中的成员进行分类。您可以根据需要创建多个群组。";
 $definitions["message.incorrectLogin"] = "登录信息有误";
 $definitions["message.incorrectPassword"] = "当前密码有误.";
 $definitions["message.installerAdminHelp"] = "管理员帐户信息:";
@@ -563,12 +566,11 @@ $definitions["gambit.private"] = "私话";
 $definitions["gambit.random"] = "随机";
 $definitions["gambit.reverse"] = "反选";
 $definitions["gambit.starred"] = "关注话题";
-$definitions["gambit.muted"] = "静音";
+$definitions["gambit.ignored"] = "忽略";
 $definitions["gambit.sticky"] = "置顶";
 $definitions["gambit.unread"] = "未读";
-$definitions["gambit.ignored"] = "忽略";
-$definitions["gambit.more results"] = "更多结果";
-
+$definitions["gambit.limit:"] = "限制:";
+$definitions["gambit.title:"] = "标题:";
 // Aliases
 // These are gambits which tell the gambit system to use another gambit.
 // In other words, when you type "active today", the gambit system interprets it as if you typed "active 1 day".
@@ -587,6 +589,9 @@ $definitions["gambit.has 0 replies"] = "0 回复";
 $definitions["gambit.dead"] = "已删";
 $definitions["gambit.active >30 day"] = "活跃超过30天";
 
+// Units of time
+// These are used in the active gambit.
+// ex. "[active] [>|<|>=|<=|last] 180 [second|minute|hour|day|week|month|year]"
 // Units of time
 // These are used in the active gambit.
 // ex. "[active] [>|<|>=|<=|last] 180 [second|minute|hour|day|week|month|year]"
@@ -610,9 +615,8 @@ $definitions["gambit.gambitActive"] = "/^{$definitions["gambit.active"]} *(?<a>>
 
 // These appear in the tag cloud. They must fit the regular expression pattern where the ? is a number.
 // If the regular expression pattern has been reordered, these gambits must also be reordered (as well as the ones in aliases.)
-$definitions["gambit.active last ? hours"] = "{$definitions["gambit.active"]} {$definitions["gambit.last"]} X {$definitions["gambit.hour"]}";
-$definitions["gambit.active last ? days"] = "{$definitions["gambit.active"]} {$definitions["gambit.last"]} X {$definitions["gambit.day"]}";
-
+$definitions["gambit.active last ? hours"] = "{$definitions["gambit.active"]} {$definitions["gambit.last"]} ? {$definitions["gambit.hour"]}s";
+$definitions["gambit.active last ? days"] = "{$definitions["gambit.active"]} {$definitions["gambit.last"]} ? {$definitions["gambit.day"]}s";
 // This is similar to the regular expression for the active gambit, but for the "has n reply(s)" gambit.
 // Usually you just need to change the "has" and "repl".
 $definitions["gambit.gambitHasNReplies"] = "/^has *(?<a>>|<|>=|<=)? *(?<b>\d+) *repl/";
