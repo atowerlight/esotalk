@@ -7,7 +7,6 @@ cache/*
 config/*
 uploads/*
 robots.txt
-addons/plugins/*
 addons/skins/*
 addons/libraries/*
 !addons/plugins/BBCode
