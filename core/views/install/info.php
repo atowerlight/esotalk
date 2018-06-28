@@ -13,7 +13,7 @@ if (!defined("IN_ESOTALK")) exit;
 $form = $data["form"];
 ?>
 <h1><?php echo T("Welcome to esoTalk"); ?></h1>
-<h2><?php printf(T("message.installerWelcome"), "http://esotalk.org/docs/debug"); ?></h2>
+<h2><?php printf(T("message.installerWelcome"), "https://to.towerlight.top/eso-bbs"); ?></h2>
 
 <?php echo $form->open(); ?>
 
