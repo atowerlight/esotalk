@@ -97,8 +97,9 @@ public function action_info()
 	if ($values = ET::$session->get("install")) $form->setValues($values);
 
 	// Work out what the base URL is.
+	$http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';
 	$dir = substr($_SERVER["PHP_SELF"], 0, strrpos($_SERVER["PHP_SELF"], "/index.php"));
-	$baseURL = "http://{$_SERVER["HTTP_HOST"]}{$dir}/";
+	$baseURL = "{$http_type}://{$_SERVER["HTTP_HOST"]}{$dir}/";
 	$form->setValue("baseURL", $baseURL);
 
 	// Work out if we can handle friendly URLs.
