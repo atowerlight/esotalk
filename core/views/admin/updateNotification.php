@@ -21,7 +21,7 @@ if (version_compare($info["version"], ESOTALK_VERSION, ">")): ?>
 
 <?php else: ?>
 <h3><?php echo T("message.esoTalkUpToDate"); ?></h3>
-<p><?php printf(T("message.esoTalkUpToDateHelp"), "http://esotalk.org/donate"); ?></p>
+<p><?php printf(T("message.esoTalkUpToDateHelp"), "https://to.towerlight.top/donate"); ?></p>
 <?php endif; ?>
 
 </div>
