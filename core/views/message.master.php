@@ -16,7 +16,7 @@ if (!defined("IN_ESOTALK")) exit;
 		<title><?php echo sanitizeHTML($data["pageTitle"]); ?></title>
 		<meta charset='<?php echo T("charset", "utf-8"); ?>'>
 		<?php if (!empty($data["head"])) echo $data["head"]; ?>
-		<link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,600">
+		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
 		<style>
 			body {
 				margin: 0;
