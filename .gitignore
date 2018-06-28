@@ -2,6 +2,7 @@
 .project
 .settings
 .htaccess
+.well-known/*
 sitemap*
 cache/*
 config/*
