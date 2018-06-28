@@ -124,6 +124,7 @@ foreach ($scrubber as $year => $months) {
 		echo "<ul>";
 		foreach ($months as $month) {
 			$selected = ($startFromYear == $year and $startFromMonth == $month) ? " selected" : "";
+			setlocale(LC_TIME,"chs");  
 			$name = _strftime("%B", mktime(0, 0, 0, $month, 1));
 			$index = $year.str_pad($month, 2, "0", STR_PAD_LEFT);
 			echo "<li class='scrubber-$index$selected' data-index='$index'><a href='".URL(makeURL("$year/$month"))."'>$name</a></li>";
