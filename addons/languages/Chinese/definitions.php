@@ -67,7 +67,7 @@ $definitions["Administration"] = "管理员";
 $definitions["Administrator email"] = "管理员邮箱";
 $definitions["Administrator password"] = "管理员密码";
 $definitions["Administrator username"] = "管理员用户名";
-$definitions["Advanced options"] = "高级选项";
+$definitions["Advanced Options"] = "高级选项";
 $definitions["All Channels"] = "全部话题";
 $definitions["Allow members to edit their own posts:"] = "允许成员编辑自己的帖子:";
 $definitions["Already have an account? <a href='%s' class='link-login'>Log in!</a>"] = "已经有一个帐户吗? <a href='%s' class='link-login'>登入</a>";
@@ -268,6 +268,10 @@ $definitions["MySQL queries"] = "MySQL查询";
 $definitions["MySQL Table Prefix"] = "数据库前辍:";
 $definitions["MySQL Username"] = "MySQL用户名";
 $definitions["MySQL version"] = "MySQL版本";
+$definitions["Admin Username"] = "管理员用户名";
+$definitions["Admin Email"] = "管理员邮箱";
+$definitions["Admin Password"] = "管理员密码";
+$definitions["Confirm Password"] = "确认密码";
 
 $definitions["Name"] = "名字";
 $definitions["never"] = "从未";
@@ -405,7 +409,7 @@ $definitions["Viewing: %s"] = "正在查看: %s";
 $definitions["viewingPosts"] = "<b>%s-%s</b>%s发布的";
 
 $definitions["Warning"] = "不可以这样！";
-$definitions["Welcome to esoTalk!"] = "Welcome to esoTalk!";
+$definitions["Welcome to esoTalk!"] = "欢迎使用 esoTalk!";
 $definitions["We've logged you in and taken you straight to your forum's administration panel. You're welcome."] = "安装成功！！欢迎来到esoTalk的世界！！这里是esoTalk的管理面板。";
 $definitions["Write a reply..."] = "回复点什么...";
 
