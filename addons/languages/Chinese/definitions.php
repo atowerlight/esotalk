@@ -418,6 +418,7 @@ $definitions["Write a reply..."] = "回复点什么...";
 $definitions["Yes"] = "是";
 $definitions["You can manage channel-specific permissions on the channels page."] = "可以管理节点页面上的特定权限.";
 $definitions["Your current password"] = "当前密码";
+$definitions["Upgrade Now"] = "查看详情";
 
 
 // Messages.
