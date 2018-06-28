@@ -261,12 +261,12 @@ $definitions["Mobile skin"] = "移动风格";
 $definitions["Moderate"] = "特权";
 $definitions["<strong>Move</strong> conversations to the following channel:"] = "<strong>移动</strong> 话题到以下节点:";
 $definitions["Mute conversation"] = "屏蔽话题";
-$definitions["MySQL database"] = "数据库名:";
-$definitions["MySQL host address"] = "主机:";
-$definitions["MySQL password"] = "密码:";
+$definitions["MySQL Database"] = "数据库名:";
+$definitions["MySQL Host"] = "主机:";
+$definitions["MySQL Password"] = "密码:";
 $definitions["MySQL queries"] = "MySQL查询";
-$definitions["MySQL table prefix"] = "数据库前辍:";
-$definitions["MySQL username"] = "MySQL用户名";
+$definitions["MySQL Table Prefix"] = "数据库前辍:";
+$definitions["MySQL Username"] = "MySQL用户名";
 $definitions["MySQL version"] = "MySQL版本";
 
 $definitions["Name"] = "名字";
