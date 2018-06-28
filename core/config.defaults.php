@@ -54,7 +54,7 @@ $config["esoTalk.database.connectionOptions"] = array(
 // Basic forum details.
 $config["esoTalk.forumTitle"] = "";
 $config["esoTalk.forumLogo"] = false; // Path to an image file to replace the title (don't make it too big or it'll stretch the header!)
-$config["esoTalk.language"] = "English";
+$config["esoTalk.language"] = "Chinese";
 $config["esoTalk.baseURL"] = "";
 $config["esoTalk.resourceURL"] = ""; // URL used for all resources (CSS+JS+images, including those from plugins and skins.) If blank, the base URL will be used.
 $config["esoTalk.rootAdmin"] = 1; // The member ID of the root administrator.
