@@ -913,7 +913,7 @@ function smartTime($then, $precise = false)
 	elseif ($ago < 180 * 24 * 60 * 60) return strftime("%b %e", $then);
 
 	// Otherwise, show the month, day, and year.
-	else return strftime("%Y %m".($precise ? "%e " : ""), $then);
+	else return strftime("%Y %m ".($precise ? "%e " : ""), $then);
 }
 
 
