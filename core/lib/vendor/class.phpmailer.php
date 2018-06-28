@@ -1369,28 +1369,28 @@ class PHPMailer
      * @return bool
      * @access public
      */
-    public function setLanguage($langcode = 'en', $lang_path = '')
+    public function setLanguage($langcode = 'zh_cn', $lang_path = '')
     {
         //Define full set of translatable strings in English
         $PHPMAILER_LANG = array(
-            'authenticate' => 'SMTP Error: Could not authenticate.',
-            'connect_host' => 'SMTP Error: Could not connect to SMTP host.',
-            'data_not_accepted' => 'SMTP Error: data not accepted.',
-            'empty_message' => 'Message body empty',
-            'encoding' => 'Unknown encoding: ',
-            'execute' => 'Could not execute: ',
-            'file_access' => 'Could not access file: ',
-            'file_open' => 'File Error: Could not open file: ',
-            'from_failed' => 'The following From address failed: ',
-            'instantiate' => 'Could not instantiate mail function.',
-            'invalid_address' => 'Invalid address',
-            'mailer_not_supported' => ' mailer is not supported.',
-            'provide_address' => 'You must provide at least one recipient email address.',
-            'recipients_failed' => 'SMTP Error: The following recipients failed: ',
-            'signing' => 'Signing Error: ',
-            'smtp_connect_failed' => 'SMTP connect() failed.',
-            'smtp_error' => 'SMTP server error: ',
-            'variable_set' => 'Cannot set or reset variable: '
+            'authenticate' => 'SMTP 错误：登录失败。',
+            'connect_host' => 'SMTP 错误：无法连接到 SMTP 主机。',
+            'data_not_accepted' => 'SMTP 错误：数据不被接受。',
+            'empty_message' => '邮件正文为空。',
+            'encoding' => '未知编码 ',
+            'execute' => '无法执行：',
+            'file_access' => '无法访问文件：',
+            'file_open' => '文件错误：无法打开文件：',
+            'from_failed' => '发送地址错误：',
+            'instantiate' => '未知函数调用。',
+            'invalid_address' => '发送失败，电子邮箱地址是无效的：',
+            'mailer_not_supported' => ' 发信客户端不被支持。',
+            'provide_address' => '必须提供至少一个收件人地址。',
+            'recipients_failed' => 'SMTP 错误：收件人地址错误：',
+            'signing' => '登录失败：',
+            'smtp_connect_failed' => 'SMTP服务器连接失败。',
+            'smtp_error' => 'SMTP服务器出错：',
+            'variable_set' => '无法设置或重置变量：'
         );
         if (empty($lang_path)) {
             //Calculate an absolute path so it can work if CWD is not here
