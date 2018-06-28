@@ -5,8 +5,8 @@
 if (!defined("IN_ESOTALK")) exit;
 
 ET::$pluginInfo["Emoticons"] = array(
-	"name" => "Emoticons",
-	"description" => "Converts text emoticons to their graphical equivalent.",
+	"name" => "表情",
+	"description" => "允许用户添加表情到帖子中",
 	"version" => ESOTALK_VERSION,
 	"author" => "esoTalk Team",
 	"authorEmail" => "support@esotalk.org",

@@ -6,7 +6,7 @@ if (!defined("IN_ESOTALK")) exit;
 
 ET::$pluginInfo["Debug"] = array(
 	"name" => "Debug",
-	"description" => "Shows useful debugging information, such as SQL queries, to administrators.",
+	"description" => "提供有用的debug信息给管理员",
 	"version" => ESOTALK_VERSION,
 	"author" => "esoTalk Team",
 	"authorEmail" => "support@esotalk.org",

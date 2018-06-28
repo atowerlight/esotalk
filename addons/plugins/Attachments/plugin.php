@@ -5,8 +5,8 @@
 if (!defined("IN_ESOTALK")) exit;
 
 ET::$pluginInfo["Attachments"] = array(
-	"name" => "Attachments",
-	"description" => "Allows users to attach files to their posts.",
+	"name" => "附件",
+	"description" => "允许用户上传文件到帖子中",
 	"version" => ESOTALK_VERSION,
 	"author" => "Toby Zerner",
 	"authorEmail" => "support@esotalk.org",

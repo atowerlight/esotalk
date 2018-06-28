@@ -6,7 +6,7 @@ if (!defined("IN_ESOTALK")) exit;
 
 ET::$pluginInfo["BBCode"] = array(
 	"name" => "BBCode",
-	"description" => "Formats BBCode within posts, allowing users to style their text.",
+	"description" => "添加对BBCode的支持",
 	"version" => ESOTALK_VERSION,
 	"author" => "esoTalk Team",
 	"authorEmail" => "support@esotalk.org",

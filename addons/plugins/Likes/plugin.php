@@ -5,8 +5,8 @@
 if (!defined("IN_ESOTALK")) exit;
 
 ET::$pluginInfo["Likes"] = array(
-	"name" => "Likes",
-	"description" => "Allows members to like posts.",
+	"name" => "喜欢",
+	"description" => "允许用户喜欢帖子",
 	"version" => ESOTALK_VERSION,
 	"author" => "Toby Zerner",
 	"authorEmail" => "support@esotalk.org",

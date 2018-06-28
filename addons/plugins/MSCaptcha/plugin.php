@@ -4,8 +4,8 @@
 if (!defined("IN_ESOTALK")) exit;
 
 ET::$pluginInfo["MSCaptcha"] = array(
-	"name" => "MSCaptcha",
-	"description" => "Just simple captcha.",
+	"name" => "验证码",
+	"description" => "在用户注册时要求用户计算验证码，以减少水贴",
 	"version" => ESOTALK_VERSION,
 	"author" => "DaVchezt",
 	"authorEmail" => "chezt.v@live.com",
