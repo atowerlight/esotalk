@@ -27,6 +27,7 @@ class ETPlugin_SMTP extends ETPlugin {
 		$mail->Port       = C("plugin.SMTP.port");
 		$mail->Username   = C("plugin.SMTP.username");
 		$mail->Password   = C("plugin.SMTP.password");
+		$mail->From       = C("esoTalk.emailFrom");
 	}
 
 	/**
@@ -46,6 +47,7 @@ class ETPlugin_SMTP extends ETPlugin {
 		$form->setValue("password", C("plugin.SMTP.password"));
 		$form->setValue("port", C("plugin.SMTP.port"));
 		$form->setValue("auth", C("plugin.SMTP.auth"));
+		$form->setValue("from", C("esoTalk.emailFrom"));
 
 		// If the form was submitted...
 		if ($form->validPostBack("smtpSave")) {
@@ -57,6 +59,7 @@ class ETPlugin_SMTP extends ETPlugin {
 			$config["plugin.SMTP.password"] = $form->getValue("password");
 			$config["plugin.SMTP.port"] = $form->getValue("port");
 			$config["plugin.SMTP.auth"] = $form->getValue("auth");
+			$config["esoTalk.emailFrom"] = $form->getValue("from");
 
 			if (!$form->errorCount()) {
 

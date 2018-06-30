@@ -40,6 +40,11 @@ $form = $data["smtpSettingsForm"];
 </li>
 
 <li>
+<label><?php echo T("From"); ?></label>
+<?php echo $form->input("from", "text"); ?>
+</li>
+
+<li>
 <label><?php echo T("Authentication"); ?></label>
 <div class='checkboxGroup'>
 	<label class='radio'><?php echo $form->radio("auth", "false"); ?> <?php echo T("Normal"); ?></label>
