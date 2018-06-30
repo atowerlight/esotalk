@@ -1071,3 +1071,27 @@ function ensureUtf8($text) {
 function _strftime($format, $time = null) {
     return ensureUtf8(strftime($format, $time));
 }
+/**
+ * Spilt the Chinese words with segmentation service.
+ * 
+ * @param string The sentence that to spilt.
+ * @param string The spilt string.
+ * @return string The words with space
+ * 
+ */
+function spiltWords($str , $spilt = ' ')
+{
+	if ($ret){
+		$result = '';
+		foreach ($ret as $value){
+			//过滤一些字符
+			if(!in_array($value['word_tag'], array('30','31','32','40','41','42','50','85','86','87','108','121','122','123','124','125','126','140','141','142','143','144','145','146','150','151','152','153','154','155','156','160','173','174','230' )))
+				$result .= $value['word'].$spilt;
+		}
+		$result = trim($result,' ');
+		return $result;
+	}else{
+		return false;
+	}
+	
+}
