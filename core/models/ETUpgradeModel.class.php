@@ -269,7 +269,7 @@ public function install($info)
 
 	// Create the General Discussion channel.
 	$id = ET::channelModel()->create(array(
-		"title" => "General Discussion",
+		"title" => "默认节点",
 		"slug" => slug("General Discussion")
 	));
 	ET::channelModel()->setPermissions($id, array(
@@ -280,7 +280,7 @@ public function install($info)
 
 	// Create the Staff Only channel.
 	$id = ET::channelModel()->create(array(
-		"title" => "Staff Only",
+		"title" => "管理员节点",
 		"slug" => slug("Staff Only")
 	));
 	ET::channelModel()->setPermissions($id, array(
@@ -292,15 +292,15 @@ public function install($info)
 
 	// Create a welcome conversation.
 	ET::conversationModel()->create(array(
-		"title" => "Welcome to ".$info["forumTitle"]."!",
-		"content" => "[b]Welcome to ".$info["forumTitle"]."![/b]\n\n".$info["forumTitle"]." is powered by [url=http://esotalk.org]esoTalk[/url], the simple, fast, free web-forum.\n\nFeel free to edit or delete this conversation. Otherwise, it's time to get posting!\n\nAnyway, good luck, and we hope you enjoy using esoTalk.",
+		"title" => "欢迎来到 ".$info["forumTitle"]."!",
+		"content" => "[b]欢迎来到 ".$info["forumTitle"]."![/b]\n\n".$info["forumTitle"]." 使用 [url=https://to.towerlight.top/eso-bbs]esoTalk 中文优化版[/url]构建。\n\nEsotalk 是一个优美且简单的论坛软件，她让你专注于管理论坛而不是解决问题、学习解决办法。\n\n请随意的修改或者删除这个帖子。\n\n希望你能愉快的使用 esoTalk 中文优化版",
 		"channelId" => 1
 	));
 
 	// Create a helpful private conversation with the administrator.
 	ET::conversationModel()->create(array(
-		"title" => "Pssst! Want a few tips?",
-		"content" => "Hey {$info["adminUser"]}, congrats on getting esoTalk installed!\n\nCool! Your forum is now good-to-go, but you might want to customize it with your own logo, design, and settings—so here's how.\n\n[h]Changing the Logo[/h]\n\n1. Go to the [url=".C("esoTalk.baseURL")."admin/settings]Forum Settings[/url] section of your administration panel.\n2. Select 'Show an image in the header' for the 'Forum header' setting.\n3. Find and select the image file you wish to use.\n4. Click 'Save Changes'. The logo will automatically be resized so it fits nicely in the header.\n\n[h]Changing the Appearance[/h]\n\n1. Go to the [url=".C("esoTalk.baseURL")."admin/appearance]Appearance[/url] section of your administration panel.\n2. Choose colors for the header, page background, or select a background image. (More skins will be available soon.)\n3. Click 'Save Changes', and your forum's appearance will be updated!\n\n[h]Managing Channels[/h]\n\n'Channels' are a way to categorize conversations in your forum. You can create as many or as few channels as you like, nest them, and give them custom permissions.\n\n1. Go to the [url=".C("esoTalk.baseURL")."admin/channels]Channels[/url] section of your administration panel.\n2. Click 'Create Channel' and fill out a title, description, and select permissions to add a new channel.\n3. Drag and drop channels to rearrange and nest them.\n\n[h]Getting Help[/h]\n\nIf you need help, come and give us a yell at the [url=http://esotalk.org/forum]esoTalk Support Forum[/url]. Don't worry—we don't bite!",
+		"title" => "管理员情看，这里有几个小技巧",
+		"content" => "你好 {$info["adminUser"]}, 非常高兴的告诉你，你的 esoTalk 已经安装完成。\n\n这篇文章只有你能看到，你可以随意的删除或者修改。\n\n你的论坛已经整装待发，在这之前你需要进入后台进行一些简单的设置，以自定你的论坛。\n\n[h]更改 Logo[/h]\n\n1. 去到[url=".C("esoTalk.baseURL")."admin/settings]论坛设置界面[/url]\n2. 找到 社区顶部 一栏，点击 在顶部显示图像标志 \n3. 选择一副图片作为你的 logo。\n4. 点击 保存更改 你新加入的图片将会自动出现在页面顶部\n\n[h]更改外观[/h]\n\n1. 点击 [url=".C("esoTalk.baseURL")."admin/appearance]外观设置[/url]\n2. 设置一个你喜欢的颜色，你可以在这里得到推荐的颜色[url=https://colorhunt.co/]Color Hunt[/url]\n3. 点击 保存更改 \n\n[h]管理节点[/h]\n\n你可以自由的创建你的节点和子节点，并对他们进行权限以及外观的修改\n\n1. 点击 [url=".C("esoTalk.baseURL")."admin/channels]管理节点[/url]\n2. 点击添加节点并完成类容的填写。\n3. 点击保存修改即可添加节点.\n\n[h]遇到问题[/h]\n\n如果你遇到问题请到[url=https://to.towerlight.top/eso-bbs]esoTalk 中文优化版讨论区[/url]",
 		"channelId" => 1
 	), array(array("type" => "member", "id" => 1)));
 
