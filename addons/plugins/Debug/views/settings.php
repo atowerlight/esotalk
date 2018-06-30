@@ -19,7 +19,7 @@ $form = $data["debugSettingsForm"];
 <ul class='form'>
 
 <li>
-<label>Database</label>
+<label>数据库</label>
 <?php echo $form->button("upgradeDB", "Upgrade Database"); ?>
 </li>
 
