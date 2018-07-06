@@ -6,7 +6,7 @@ here if necessary.
 */
 
 /* Global */
-body {font-size:14px; font-weight:300; margin:0; overflow-y:scroll; background:#fff; color:#666}
+body {font-size:14px; font-weight: normal; margin:0; overflow-y:scroll; background:#fff; color:#666}
 body, input, textarea, select {font-family:open sans,lucida grande,lucida sans unicode,helvetica,arial,sans-serif}
 input, textarea, select {font-size:100%}
 strong {font-weight:600}
