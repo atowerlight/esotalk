@@ -1,0 +1,9 @@
+.emoticon {display:inline-block; text-indent:-9999px; width:16px; height:16px; background:url(emoticons.png); background-repeat:no-repeat;}
+.formattingButtons .emoticon{background-position:0 0; margin-top:-2px;}
+#emoticonDropDown {position:absolute; padding: 12px 2px 2px 2px; z-index:100;}
+#emoticonDropDown div{border:1px solid #eee;background-color: #fff; padding:2px}
+#emoticonDropDown li{display: inline;float:left;list-style-type: none;padding: 0;margin:0;height:20px;width:20px;}
+#emoticonDropDown ul{line-height:16px;width: 120px;margin: 0;padding: 0;}
+#emoticonDropDown a{display: block;text-align: center;text-decoration: none;color: #000;height:16px;width:16px;padding-top:2px}
+#emoticonDropDown a:hover{ background-color: #888;}
+#emoticonDropDown a.closeLink{color:#aaa;clear: both;width:100%;height:10px;font-size:0.6em;padding:0;margin:0}
