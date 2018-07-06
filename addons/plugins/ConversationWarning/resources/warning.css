@@ -1,0 +1,17 @@
+.modbreak {
+    clear:both;
+    padding:5px 10px 10px 10px;
+    background-color:#f0d8dd;
+    border-top:1px solid #d7bec4;
+    border-bottom:1px solid #d7bec4;
+    font-size:14px;
+    margin:0 -2px 0 -2px;
+}
+.modbreak .legend {
+    color:#b9133c;
+    font-weight:700;
+    margin-bottom:10px;
+}
+.modbreak .warning {color:#000}
+.modbreak .control-modbreak {position:relative;float:right;display:inline}
+.control-edit-warning, .control-remove-warning {cursor:pointer}
