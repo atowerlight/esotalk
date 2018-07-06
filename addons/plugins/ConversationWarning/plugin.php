@@ -26,7 +26,7 @@ class ETPlugin_ConversationWarning extends ETPlugin {
 		return true;
 	}
 
-	public function __construct($rootDirectory)
+	public function __construct($rootDirectory = 0)
 	{
 		parent::__construct($rootDirectory);
 

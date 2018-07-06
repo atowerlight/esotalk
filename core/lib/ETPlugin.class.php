@@ -25,7 +25,7 @@ protected $path;
  * @param string $path The path to the directory, from the esoTalk root, which this plugin resides in.
  * @return void
  */
-public function __construct($path)
+public function __construct($path = 0)
 {
 	$this->path = $path;
 }

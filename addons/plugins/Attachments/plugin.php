@@ -46,7 +46,7 @@ class ETPlugin_Attachments extends ETPlugin {
 	}
 
 	// Register the attachment model/controller.
-	public function __construct($rootDirectory)
+	public function __construct($rootDirectory = 0)
 	{
 		parent::__construct($rootDirectory);
 

@@ -15,7 +15,7 @@ ET::$pluginInfo["MSCaptcha"] = array(
 
 class ETPlugin_MSCaptcha extends ETPlugin {
 
-	public function __construct($rootDirectory)
+	public function __construct($rootDirectory = 0)
 	{
 		parent::__construct($rootDirectory);
 				

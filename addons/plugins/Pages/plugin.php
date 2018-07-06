@@ -90,7 +90,7 @@ Esotalk 是一个优美且简单的论坛软件，她让你专注于管理论坛
 		));
 	}
 
-	public function __construct($rootDirectory)
+	public function __construct($rootDirectory = 0)
 	{
 		parent::__construct($rootDirectory);
 		
