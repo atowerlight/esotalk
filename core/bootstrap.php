@@ -30,7 +30,7 @@ ini_set("display_errors", "On");
 error_reporting(E_ERROR | E_PARSE | E_CORE_ERROR | E_COMPILE_ERROR | E_USER_ERROR | E_RECOVERABLE_ERROR);
 
 // Make sure a default timezone is set... silly PHP 5.
-if (ini_get("date.timezone") == "") date_default_timezone_set("GMT");
+if (ini_get("date.timezone") == "") date_default_timezone_set('PRC');
 
 // Define directory constants.
 if (!defined("PATH_CONTROLLERS")) define("PATH_CONTROLLERS", PATH_CORE."/controllers");
