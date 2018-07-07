@@ -231,7 +231,7 @@ $definitions["label.sticky"] = "置顶";
 $definitions["Labels"] = "标签";
 $definitions["Last active"] = "最后活跃";
 $definitions["Last active %s"] = "最后活跃在 %s";
-$definitions["Latest"] = "最新";
+$definitions["Latest"] = "最新回复";
 $definitions["Latest News"] = "官方消息";
 $definitions["Loading..."] = "加载中...";
 $definitions["Lock"] = "锁定";
@@ -300,7 +300,7 @@ $definitions["Only allow members of this group to see who else is in it"] = "仅
 $definitions["Open registration"] = "开放注册";
 $definitions["optional"] = "可选";
 $definitions["Order By:"] = "排序:";
-$definitions["Original Post"] = "原文";
+$definitions["Original Post"] = "最早内容";
 
 $definitions["Page Not Found"] = "找不到该页面了";
 $definitions["Password"] = "密码";
