@@ -29,7 +29,7 @@ class ETPlugin_WordFilter extends ETPlugin {
 
 		// Pass each instance of any filtered word to our callback.
 		$words = array_keys($filters);
-		$sender->content = preg_replace_callback('#\b('.implode('|', $words).')\b#i', array($this, "filterCallback"), $sender->content);
+		$sender->content = preg_replace_callback('#\B('.implode('|', $words).')\B#i', array($this, "filterCallback"), $sender->content);
 	}
 
 
@@ -53,7 +53,7 @@ class ETPlugin_WordFilter extends ETPlugin {
 		elseif (!empty($filters[$map[strtolower($match)]])) $replacement = $filters[$map[strtolower($match)]];
 
 		// Otherwise, use asterisks.
-		else $replacement = str_repeat("*", strlen($match));
+		else $replacement = str_repeat("*", mb_strlen($match));
 
 		return $replacement;
 	}
