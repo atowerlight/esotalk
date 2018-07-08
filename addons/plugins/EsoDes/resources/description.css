@@ -1,0 +1,12 @@
+.item-description{
+	font-size: 14px;
+	color: #888888;
+	margin:0; display:inline;
+	float: left !important;
+	padding-top: 11px;
+	top: 12px;
+	position: absolute !important;
+	margin-left: -10px;
+	overflow: hidden;
+	
+}
