@@ -151,7 +151,6 @@ $definitions["Email me when I'm added to a private conversation"] = "收到私�
 $definitions["Email me when someone mentions me in a post"] = "有人提到我时，邮件通知我";
 $definitions["Email me when someone posts in a conversation I have followed"] = "我关注的话题有新动态时，邮件通知我";
 $definitions["Email me when there is a new post by a member I have followed"] = "我关注的人发新帖时，邮件通知我";
-$definitions["Email me when someone posts in a channel I have followed"] = "有人在我关注的节点发帖时，邮件通知我";
 
 $definitions["Email"] = "电子邮件";
 $definitions["Enable"] = "启用";
