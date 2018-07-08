@@ -6,7 +6,7 @@ if (!defined("IN_ESOTALK")) exit;
 
 ET::$pluginInfo["ShadowBan"] = array(
 	"name" => "黑名单",
-	"description" => "允许用户将某些用户列入黑名单",
+	"description" => "允许管理员将某些用户列入黑名单，黑名单中用户的帖子对其他用户隐藏",
 	"version" => ESOTALK_VERSION,
 	"author" => "Toby Zerner",
 	"authorEmail" => "support@esotalk.org",
@@ -76,7 +76,7 @@ class ETPlugin_ShadowBan extends ETPlugin {
 				$post["deleteTime"] = $post["time"];
 				$formatted = $sender->formatPostForTemplate($post, $conversation);
 				if ($conversation["canModerate"]) {
-					$formatted["controls"] = array("<span>This member has been shadow-banned</span>");
+					$formatted["controls"] = array("<span>这个用户已被管理员列入黑名单</span>");
 				}
 			}
 		}
