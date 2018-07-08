@@ -146,7 +146,7 @@ span.highlight {background:#fdef34; padding:1px 4px; border-radius:3px}
 .popup h3 {margin:0; padding:10px}
 .withArrow.popup:before {border-color:#666}
 .withArrow.popup:after {border-color:#fff}
-.popupWrapper .popup {min-width:99%}
+.popupWrapper .popup {min-width:99.6%}
 
 .popup.right {border-radius:2px 0 2px 2px}
 .popup.left {border-radius:0 2px 2px 2px}
