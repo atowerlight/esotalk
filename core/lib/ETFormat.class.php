@@ -64,7 +64,7 @@ public function inline($inline)
  *
  * @return ETFormat
  */
-public function format()
+public function format($sticky = false)
 {
 	// Trigger the "before format" event, which can be used to strip out code blocks.
 	$this->trigger("beforeFormat");
@@ -72,7 +72,12 @@ public function format()
 	// Format links, mentions, and quotes.
 	if (C("esoTalk.format.mentions")) $this->mentions();
 	if (!$this->inline) $this->quotes();
-	$this->links();
+	if(array_search('AutoLink', C("esoTalk.enabledPlugins"))) {
+        if ($sticky) $this->links();
+    }
+    else {
+        $this->links();
+    }
 
 	// Format bullet and numbered lists.
 	if (!$this->inline) $this->lists();
