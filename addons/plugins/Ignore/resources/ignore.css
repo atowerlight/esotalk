@@ -1,0 +1,14 @@
+.ignoredMembers {
+	margin: 0;
+	padding: 0;
+}
+.ignoredMembers li {
+	overflow: hidden;
+}
+.ignoredMembers li .button {
+	visibility: hidden;
+	margin-left: 10px;
+}
+.ignoredMembers li:hover .button {
+	visibility: visible;
+}
