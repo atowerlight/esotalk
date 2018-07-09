@@ -84,15 +84,15 @@ class ETPlugin_Profiles extends ETPlugin {
 		if ( ! $model->getById(1)) {
 			$model->create(array(
 				"fieldId"     => 1,
-				"name"        => "About",
-				"description" => "Write something about yourself.",
+				"name"        => "个人简介",
+				"description" => "一句话描述你自己",
 				"type"        => "textarea"
 			));
 		}
 		if ( ! $model->getById(2)) {
 			$model->create(array(
 				"fieldId"     => 2,
-				"name"        => "Location",
+				"name"        => "所在地",
 				"type"        => "text",
 				"showOnPosts" => true,
 				"searchable"  => true
