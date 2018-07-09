@@ -73,7 +73,7 @@ public function action_news()
 	// Now fetch the latest posts from the esoTalk blog.
 	// Thanks to Brian for this code.
 	// (http://stackoverflow.com/questions/250679/best-way-to-parse-rss-atom-feeds-with-php/251102#251102)
-	$xmlSource = file_get_contents("https://blog.towerlight.top/feed/category/eso/");
+	$xmlSource = file_get_contents("https://flarum.b0.upaiyun.com/esotalk/feed.xml");
 	$x = simplexml_load_string($xmlSource);
 	$posts = array();
 

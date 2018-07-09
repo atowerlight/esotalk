@@ -176,7 +176,7 @@ public static function first($event, $parameters = array())
  */
 public static function checkForUpdates()
 {
-	$json = @file_get_contents("https://blog.towerlight.top/esotalk/versions.json");
+	$json = @file_get_contents("https://flarum.b0.upaiyun.com/esotalk/versions.json");
 	$packages = json_decode($json, true);
 
 	// Compare the installed version and the latest version. Show a message if there is a new version.
