@@ -20,6 +20,7 @@ class ReputationModel extends ETModel {
 	{
 		$result = ET::SQL()
 		->select("username")
+		->select("email")
 	    ->select("memberId")
 	    ->select("reputationPoints")
 	    ->from("member")
