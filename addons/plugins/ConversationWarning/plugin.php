@@ -5,7 +5,7 @@ if (!defined("IN_ESOTALK")) exit;
 
 ET::$pluginInfo["ConversationWarning"] = array(
 	"name" => "回帖提醒",
-	"description" => "允许用户设置回帖提醒，以提醒其他用户回帖的注意事项",
+	"description" => "允许楼主设置回帖提醒，以提醒其他用户回帖的注意事项",
 	"version" => "1.1.2",
 	"author" => "Tristan van Bokkem",
 	"authorEmail" => "tristanvanbokkem@gmail.com",

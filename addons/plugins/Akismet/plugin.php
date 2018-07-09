@@ -83,9 +83,9 @@ class ETPlugin_Akismet extends ETPlugin {
       $apiKey = $form->getValue('apiKey');
 
       if ( $this->verifyKey($apiKey) ) {
-        $sender->message('verify key success', 'success autoDismiss');
+        $sender->message('验证 key 成功', 'success autoDismiss');
       } else {
-        $sender->message('verify key failed', 'warning autoDismiss');
+        $sender->message('验证 key 失败', 'warning autoDismiss');
       }
       return;
     }

@@ -5,7 +5,7 @@ if (!defined("IN_ESOTALK")) exit;
 
 ET::$pluginInfo["AutoLink"] = array(
 	"name" => "自动填充",
-	"description" => "当用户帖子中含有图片或者视频网站链接时自动填充为相应格式(支持图片和优酷/油管)",
+	"description" => "当用户帖子中含有图片或者视频网站链接时自动填充为相应格式(支持图片和优酷/YouTube)",
 	"version" => "1.2.1",
 	"author" => "Ramouch0",
 	"authorEmail" => "support@esotalk.org",

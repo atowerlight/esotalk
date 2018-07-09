@@ -4,7 +4,7 @@ if (!defined("IN_ESOTALK")) exit;
 
 ET::$pluginInfo["BanEmail"] = array(
     "name"        => "禁止电子邮件地址",
-    "description" => "禁止用户使用某些电子邮件服务",
+    "description" => "允许管理员禁止用户使用某些电子邮件服务",
     "version"     => "1.0.1",
     "author"      => "saturngod",
     "authorEmail" => "saturngod@gmail.com",
