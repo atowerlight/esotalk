@@ -56,7 +56,7 @@ if (!defined("IN_ESOTALK")) exit;
 <?php foreach ($data["nearbyMembers"] as $member): ?>
 <li>
 <span class='action'>
-<?php echo $member["rank"], ". ", $member["avatar"], " ", memberLink($member["memberId"], $member["username"]), " +", number_format($member["reputationPoints"]), " Reputation Points"; ?>
+<?php echo $member["rank"], ". ", $member["avatar"], " ", memberLink($member["memberId"], $member["username"]), " +", number_format($member["reputationPoints"]), " 积分"; ?>
 </span>
 </li>
 <?php endforeach; ?>

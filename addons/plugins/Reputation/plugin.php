@@ -67,7 +67,7 @@ class ETPlugin_Reputation extends ETPlugin {
 		if(!C("plugin.Reputation.showReputationPublic")) return;
 		// Show reputation points next to username on every post
 		$postMemberReputation = "+ ".$post["reputationPoints"]." RP";
-		$postMemberReputation = "<a href='".URL("reputation")."' class = 'time' title='Reputation Points'>$postMemberReputation</a>";
+		$postMemberReputation = "<a href='".URL("reputation")."' class = 'time' title='积分'>$postMemberReputation</a>";
 		$formatted["info"][] = $postMemberReputation;
 	}
 
