@@ -86,17 +86,60 @@ class ETPlugin_Profiles extends ETPlugin {
 				"fieldId"     => 1,
 				"name"        => "个人简介",
 				"description" => "一句话描述你自己",
-				"type"        => "textarea"
+				"type"        => "textarea",
+				"position"    => "0"
 			));
 		}
 		if ( ! $model->getById(2)) {
 			$model->create(array(
 				"fieldId"     => 2,
 				"name"        => "所在地",
-				"description" => "国内具体到省，国外具体到国家",
-				"type"        => "text",
+				"description" => "请选择你的所在地",
+				"type"        => "select",
+				"options"     => "北 京\n天 津\n河 北\n山 西\n内蒙古\n辽 宁\n吉 林\n黑龙江\n上 海\n江 苏\n浙 江\n安 徽\n福 建\n江 西\n山 东\n河 南\n湖 北\n湖 南\n广 东\n广 西
+				海 南\n重 庆\n四 川\n贵 州\n云　南\n西 藏\n陕 西\n甘　肃\n青 海\n宁 夏\n新 疆\n香 港\n澳 门\n台 湾、",
 				"showOnPosts" => true,
-				"searchable"  => true
+				"searchable"  => true,
+				"position"    => "1"
+			));
+		}
+		if ( ! $model->getById(3)) {
+			$model->create(array(
+				"fieldId"     => 3,
+				"name"        => "GitHub",
+				"description" => "键入你的GitHub账户地址",
+				"type"        => "member",
+				"position"    => "2"
+			));
+		}
+		if ( ! $model->getById(4)) {
+			$model->create(array(
+				"fieldId"     => 4,
+				"name"        => "性别",
+				"description" => "选择你的性别，请真实填写",
+				"type"        => "select",
+				"options"     => "保密\n男性\n女性",
+				"position"    => "3"
+			));
+		}
+		if ( ! $model->getById(5)) {
+			$model->create(array(
+				"fieldId"     => 5,
+				"name"        => "年龄段",
+				"description" => "选择你的年龄段",
+				"type"        => "select",
+				"options"     => "00后\n90后\n80后\n70后\n60后及以后",
+				"position"    => "4"
+			));
+		}
+		if ( ! $model->getById(6)) {
+			$model->create(array(
+				"fieldId"     => 6,
+				"name"        => "兴趣爱好",
+				"description" => "请选择你的兴趣爱好",
+				"type"        => "checkboxes",
+				"options"     => "影视\n图书\n音乐\n科技\n二次元",
+				"position"    => "5"
 			));
 		}
 	}
