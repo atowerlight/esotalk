@@ -93,6 +93,7 @@ class ETPlugin_Profiles extends ETPlugin {
 			$model->create(array(
 				"fieldId"     => 2,
 				"name"        => "所在地",
+				"description" => "国内具体到省，国外具体到国家",
 				"type"        => "text",
 				"showOnPosts" => true,
 				"searchable"  => true
@@ -165,11 +166,11 @@ class ETPlugin_Profiles extends ETPlugin {
 				case "checkboxes":
 					$items = explode("\n", $field["data"]);
 					$items = array_map("sanitizeHTML", $items);
-					$field["data"] = implode("<br>", $items);
+					$field["data"] = implode("&nbsp;", $items);
 					break;
 
 				case "member":
-					$field["data"] = "<a href='".URL("member/name/".urlencode($field["data"]))."'>".sanitizeHTML($field["data"])."</a>";
+					$field["data"] = "<a href='".$field["data"]."'target='_blank'>".sanitizeHTML($field["data"])."</a>";
 					break;
 
 				default:
