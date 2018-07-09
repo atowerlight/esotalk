@@ -96,8 +96,7 @@ class ETPlugin_Profiles extends ETPlugin {
 				"name"        => "所在地",
 				"description" => "请选择你的所在地",
 				"type"        => "select",
-				"options"     => "北 京\n天 津\n河 北\n山 西\n内蒙古\n辽 宁\n吉 林\n黑龙江\n上 海\n江 苏\n浙 江\n安 徽\n福 建\n江 西\n山 东\n河 南\n湖 北\n湖 南\n广 东\n广 西
-				海 南\n重 庆\n四 川\n贵 州\n云　南\n西 藏\n陕 西\n甘　肃\n青 海\n宁 夏\n新 疆\n香 港\n澳 门\n台 湾\n国外",
+				"options"     => "北京\n天津\n河北\n山西\n内蒙古\n辽宁\n吉林\n黑龙江\n上海\n江苏\n浙江\n安徽\n福建\n江西\n山东\n河南\n湖北\n湖南\n广东\n广西\n海南\n重庆\n四川\n贵州\n云南\n西藏\n陕西\n甘肃\n青海\n宁夏\n新疆\n香港\n澳门\n台湾\n国外",
 				"showOnPosts" => true,
 				"searchable"  => true,
 				"position"    => "1"
