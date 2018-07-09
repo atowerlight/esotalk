@@ -42,7 +42,7 @@ class ETPlugin_Views extends ETPlugin {
 	{
 		$sender->addCSSFile($this->resource("views.css"));
 
-		if ($conversation["startMemberId"] == ET::$session->userId) return;
+		//if ($conversation["startMemberId"] == ET::$session->userId) return;
 
 		$conversation["views"]++;
 
