@@ -40,12 +40,12 @@ $definitions["%s changed your group to %s."] = "%s更改你的小组到%s.";
 $definitions["%s conversation"] = "%s话题";
 $definitions["%s conversations"] = "%s个话题";
 $definitions["%s has registered and is awaiting approval."] = "%s已注册，等待审核";
-$definitions["%s invited you to %s."] = "%s邀请你%s.";
+$definitions["%s invited you to %s."] = "%s 邀请你到 %s 进行讨论";
 $definitions["%s joined the forum."] = "%s加入论坛.";
 $definitions["%s mentioned you in %s."] = "%s在%s提到你";
 $definitions["%s post"] = "%s发布";
 $definitions["%s posted %s"] = "最后回复 %s 在 %s";
-$definitions["%s posted in %s."] = "%s发布在%s.";
+$definitions["%s posted in %s."] = "%s 在 %s 有了新活动";
 $definitions["%s posts"] = "%s次发言";
 $definitions["%s reply"] = "%s条回复";
 $definitions["%s replies"] = "%s条回复";
@@ -542,10 +542,10 @@ $definitions["email.mention.subject"] = "嘿！%1\$s 提到了你";
 $definitions["email.mention.body"] = "<p>好久不见！<strong>%1\$s</strong> 在话题 <strong>%2\$s</strong> 中谈到了你.</p><hr>%3\$s<hr><p>你可以访问下方链接查看具体内容:<br>%4\$s</p>";
 
 $definitions["email.privateAdd.subject"] = "嘿！你有一个新的私人话题";
-$definitions["email.privateAdd.body"] = "<p>您有一个新的私人话题了！<strong>%1\$s</strong></p><hr>%2\$s<hr><p>请访问这个链接查看具体内容:<br>%3\$s</p>";
+$definitions["email.privateAdd.body"] = "<p>你有一个新的私人话题了！<strong>%1\$s</strong></p><hr>%2\$s<hr><p>请访问这个链接查看具体内容:<br>%3\$s</p>";
 
-$definitions["email.post.subject"] = "嘿！'%1\$s' 你有一个新回复.";
-$definitions["email.post.body"] = "<p>嘿！<strong>%1\$s</strong>回复了一个你关注的私人话题 <strong>%2\$s</strong></p><hr>%3\$s<hr><p>请访问这个链接查看具体内容:<br>%4\$s</p>";
+$definitions["email.post.subject"] = "嘿！你关注的 '%1\$s' 有了新活动";
+$definitions["email.post.body"] = "<p>嘿！<strong>%1\$s</strong>回复了一个你关注的话题 <strong>%2\$s</strong></p><hr>%3\$s<hr><p>请访问这个链接查看具体内容:<br>%4\$s</p>";
 
 
 // Translating the gambit system can be quite complex, but we'll do our best to get you through it. :)
