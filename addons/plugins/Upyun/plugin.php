@@ -30,43 +30,49 @@ class ETPlugin_Upyun extends ETPlugin {
     addToArrayString($controls, "imageup", "<a href='javascript:UPyun.imageup(\"$id\");void(0)' title='".T("文件上传")."' class='control-fixed'><i class='icon-paper-clip'></i></a>", 0);
 
   }
-  /**
- * Add an event handler to the formatter to parse BBCode and format it into HTML.
- *
- * @return void
- */
+ 
+  public function handler_format_format($sender)
+  {
+    $sender->content = preg_replace_callback("/\[upyun\]((?:\w+:\/\/|\/).*?)\[\/upyun\]/i", array($this, "upyunCallback"), $sender->content);
+  }
 
-public function handler_format_format($sender)
-{
-	// TODO: Rewrite BBCode parser to use the method found here:
-	// http://stackoverflow.com/questions/1799454/is-there-a-solid-bb-code-parser-for-php-that-doesnt-have-any-dependancies/1799788#1799788
-	// Remove control characters from the post.
-	//$sender->content = preg_replace('/[\x00-\x09\x0B\x0C\x0E-\x1F\x7F]/', '', $sender->content);
-	// \[ (i|b|color|url|somethingelse) \=? ([^]]+)? \] (?: ([^]]*) \[\/\1\] )
+  public function upyunCallback($matches, $expanded = true)
+  {
+    $upyun = $matches[1];
+    $extension = strtolower(pathinfo($upyun, PATHINFO_EXTENSION));
+    $url = $upyun;
+    $filename = basename($upyun);
+    $displayFilename = ET::formatter()->init($filename)->highlight(ET::$session->get("highlight"))->get();
 
-	$replacement = $sender->inline ? "[image]" : "<img src='$1' alt='-image-'/>";
-	// url can be
-	// - https http ftp etc
-	// - protocal relative url eg. //foo.com/pic.png
-	// - relative url eg. /sprite.png
-	$sender->content = preg_replace("/\[upyun\]((?:\w+:\/\/|\/).*?)\[\/upyun\]/i", $replacement, $sender->content);
 
-	// Links with display text: [url=http://url]text[/url]
-	//$sender->content = preg_replace_callback("/\[url=(?!\s+)(\w{2,6}:\/\/)?([^\]]*?)\](.*?)\[\/url\]/i", array($this, "linksCallback"), $sender->content);
+    
+    // For images, either show them directly or show a thumbnail.
+    if (in_array($extension, array("jpg", "jpeg", "png", "gif"))) {
+      if ($expanded) return "<span class='attachment attachment-image'><img src='".$url."' alt='".$filename."' title='".$filename."'></span>";
+      else return "<a href='".$url."' class='attachment attachment-image' target='_blank'><img src='".$upyun."' alt='".$filename."' title='".$filename."'><span class='filename'>".$extension.$url.$displayFilename."</span></a>";
+    }
 
-	// Bold: [b]bold text[/b]
-	//$sender->content = preg_replace("/\[b\](.*?)\[\/b\]/si", "<b>$1</b>", $sender->content);
+    // Embed video.
+    if (in_array($extension, array("mp4", "mov", "mpg", "avi", "m4v")) and $expanded) {
+      return "<video width='400' height='225' controls><source src='".$url."'></video>";
+    }
 
-	// Italics: [i]italic text[/i]
-	//$sender->content = preg_replace("/\[i\](.*?)\[\/i\]/si", "<i>$1</i>", $sender->content);
+    // Embed audio.
+    if (in_array($extension, array("mp3", "mid", "wav")) and $expanded) {
+      return "<audio controls><source src='".$url."'></video>";
+    }
 
-	// Strikethrough: [s]strikethrough[/s]
-	//$sender->content = preg_replace("/\[s\](.*?)\[\/s\]/si", "<del>$1</del>", $sender->content);
-
-	// Headers: [h]header[/h]
-	//$replacement = $sender->inline ? "<b>$1</b>" : "</p><h4>$1</h4><p>";
-	//$sender->content = preg_replace("/\[h\](.*?)\[\/h\]/", $replacement, $sender->content);
-}
+    $icons = array(
+      "pdf" => "file-text-alt",
+      "doc" => "file-text-alt",
+      "docx" => "file-text-alt",
+      "zip" => "archive",
+      "rar" => "archive",
+      "gz" => "archive"
+    );
+    $icon = isset($icons[$extension]) ? $icons[$extension] : "file";
+    return "<a href='".$url."' class='attachment' target='_blank'><i class='icon-$icon'></i><span class='filename'>".$displayFilename."</span></a>";
+  }
 
 
   public function settings($sender)

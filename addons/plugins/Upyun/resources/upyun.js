@@ -14,7 +14,7 @@ function getSign() {
 
 
 // click upload
-var $file = $('<input type="file" multiple accept="image/png, image/gif, image/jpg, image/jpeg">')
+var $file = $('<input type="file" multiple accept="multiple">')
 var $target = $()
 $file.on('change', function(evt) {
   $.each(this.files, function(i, file) {
