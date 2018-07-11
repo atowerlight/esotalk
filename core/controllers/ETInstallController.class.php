@@ -189,6 +189,7 @@ public function action_install()
 		"esoTalk.database.prefix" => $info["tablePrefix"]."_",
 		"esoTalk.forumTitle" => $info["forumTitle"],
 		"esoTalk.baseURL" => $info["baseURL"],
+		"esoTalk.cdnURL" => $info["baseURL"],
 		"esoTalk.emailFrom" => "do_not_reply@{$_SERVER["HTTP_HOST"]}",
 		"esoTalk.cookie.name" => preg_replace(array("/\s+/", "/[^\w]/"), array("_", ""), $info["forumTitle"]),
 		"esoTalk.urls.friendly" => !empty($info["friendlyURLs"]),

@@ -31,6 +31,15 @@ $(function() {
 
 <li class='sep'></li>
 
+<ul class='form'>
+
+<li>
+<label><?php echo T("Cdn url"); ?></label>
+<?php echo $form->input("cdnURL", "text"); ?>
+</li>
+
+<li class='sep'></li>
+
 <li>
 <label><?php echo T("Default forum language"); ?></label>
 <?php echo $form->select("language", $data["languages"]); ?>

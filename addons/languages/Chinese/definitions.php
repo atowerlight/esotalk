@@ -179,6 +179,7 @@ $definitions["Forum privacy"] = "社区信息";
 $definitions["Forum Settings"] = "社区设置";
 $definitions["Forum Statistics"] = "社区统计";
 $definitions["Forum title"] = "社区标题";
+$definitions["Cdn url"] = "CDN 地址";
 $definitions["forumDescription"] = "一个简约而不简单，回归社区本质的论坛程序。";
 
 $definitions["Give this group the 'moderate' permission on all existing channels"] = "给这个小组的所有成员'适当的'权限";

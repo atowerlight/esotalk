@@ -810,7 +810,7 @@ public function head()
 
 		// For each of the files that we need to include in the page, add a <link> tag.
 		foreach ($files as $file)
-			$head .= "<link rel='stylesheet' href='".getResource($file)."?".@filemtime($file)."'>\n";
+			$head .= "<link rel='stylesheet' href='".C("esoTalk.cdnURL").getResource($file)."?".@filemtime($file)."'>\n";
 
 	}
 
@@ -845,7 +845,7 @@ public function head()
 
 		// For each of the files that we need to include in the page, add a <script> tag.
 		foreach ($files as $file)
-			$head .= "<script src='".getResource($file)."?".filemtime($file)."'></script>\n";
+			$head .= "<script src='".C("esoTalk.cdnURL").getResource($file)."?".filemtime($file)."'></script>\n";
 	}
 
 	// Finally, append the custom HTML string constructed via $this->addToHead().

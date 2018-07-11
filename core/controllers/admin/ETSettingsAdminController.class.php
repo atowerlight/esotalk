@@ -32,6 +32,7 @@ public function action_index()
 
 	// Set the default values for the forum inputs.
 	$form->setValue("forumTitle", C("esoTalk.forumTitle"));
+	$form->setValue("cdnURL", C("esoTalk.cdnURL"));
 	$form->setValue("language", C("esoTalk.language"));
 	$form->setValue("forumHeader", C("esoTalk.forumLogo") ? "image" : "title");
 	$form->setValue("defaultRoute", C("esoTalk.defaultRoute"));
@@ -63,6 +64,7 @@ public function action_index()
 		// Construct an array of config options to write.
 		$config = array(
 			"esoTalk.forumTitle" => $form->getValue("forumTitle"),
+			"esoTalk.cdnURL" => $form->getValue("cdnURL"),
 			"esoTalk.language" => $form->getValue("language"),
 			"esoTalk.forumLogo" => $forumLogo,
 			"esoTalk.defaultRoute" => $form->getValue("defaultRoute"),
