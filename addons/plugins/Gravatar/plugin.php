@@ -32,25 +32,23 @@ class ETPlugin_Gravatar extends ETPlugin {
 		 */
 		function avatar($member = array(), $className = "")
 		{
-			$default = C("plugin.Gravatar.default") ? C("plugin.Gravatar.default") : "mm";
+			// Construct the avatar path from the provided information.
+			if (!empty($member["memberId"]) and !empty($member["avatarFormat"])) {
+				$file = "uploads/avatars/{$member["memberId"]}.{$member["avatarFormat"]}";
+				$url = getWebPath($file);
+				return "<img src='$url' alt='' class='avatar $className'/>";
+			} else {
+				$default = C("plugin.Gravatar.default") ? C("plugin.Gravatar.default") : "mm";
 
-			$url = "https://cdn.v2ex.com/gravatar/".md5(strtolower(trim($member["email"])))."?d=".urlencode($default)."&s=64";
+				$url = "https://cdn.v2ex.com/gravatar/".md5(strtolower(trim($member["email"])))."?d=".urlencode($default)."&s=64";
 
-			return "<img src='$url' alt='' class='avatar $className'/>";
+				return "<img src='$url' alt='' class='avatar $className'/>";
+				
+			}
 		}
 	}
 
-	// Change the avatar field on the settings page.
-	function handler_settingsController_initGeneral($sender, $form)
-	{
-		$form->removeField("avatar", "avatar");
-		$form->addField("avatar", "avatar", array($this, "fieldAvatar"));
-	}
 
-	function fieldAvatar($form)
-	{
-		return sprintf(T("Change your avatar on %s."), "<a href='http://gravatar.com' target='_blank'>Gravatar.com</a>");
-	}
 
 	/**
 	 * Construct and process the settings form for this skin, and return the path to the view that should be
