@@ -48,8 +48,8 @@ class ETPlugin_Upyun extends ETPlugin {
     
     // For images, either show them directly or show a thumbnail.
     if (in_array($extension, array("jpg", "jpeg", "png", "gif"))) {
-      if ($expanded) return "<span class='attachment attachment-image'><img src='".$url."' alt='".$filename."' title='".$filename."'></span>";
-      else return "<a href='".$url."' class='attachment attachment-image' target='_blank'><img src='".$upyun."' alt='".$filename."' title='".$filename."'><span class='filename'>".$extension.$url.$displayFilename."</span></a>";
+      if ($expanded) return "<span class='upyuns upyuns-image'><img src='".$url."' alt='".$filename."' title='".$filename."'></span>";
+      else return "<a href='".$url."' class='upyuns upyuns-image' target='_blank'><img src='".$upyun."' alt='".$filename."' title='".$filename."'><span class='filename'>".$extension.$url.$displayFilename."</span></a>";
     }
 
     // Embed video.
@@ -71,7 +71,7 @@ class ETPlugin_Upyun extends ETPlugin {
       "gz" => "archive"
     );
     $icon = isset($icons[$extension]) ? $icons[$extension] : "file";
-    return "<a href='".$url."' class='attachment' target='_blank'><i class='icon-$icon'></i><span class='filename'>".$displayFilename."</span></a>";
+    return "<a href='".$url."' class='upyuns' target='_blank'><i class='icon-$icon'></i><span class='filename'>".$displayFilename."</span></a>";
   }
 
 

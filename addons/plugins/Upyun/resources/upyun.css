@@ -1,3 +1,52 @@
 .upyun-drag-highlight {
   box-shadow: inset 0 0 0 1px #edcd1c;
 }
+a.upyuns {
+	/*background: #eee;*/
+	border-radius: 3px;
+	font-weight: bold;
+	display: inline-block;
+	text-decoration: none;
+	vertical-align: bottom;
+	width: 200px;
+	height: 130px;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+	margin-bottom: 4px;
+}
+a.upyuns:after {
+	content: " ";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	border-radius: 3px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+a.upyuns .filename {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	color: #666;
+	padding: 7px;
+	font-size: 12px;
+	font-weight: normal;
+	line-height:1.5em;
+}
+a.upyuns:hover:after {
+	border-color: rgba(0, 0, 0, 0.3);
+}
+a.upyuns-image .filename {
+	text-shadow:0 1px 10px #000;
+	color:#fff;
+}
+a.upyuns i {
+	font-size: 70px;
+	line-height: 100px;
+	margin-right: 5px;
+	text-decoration: none;
+	color: #ddd;
+}
