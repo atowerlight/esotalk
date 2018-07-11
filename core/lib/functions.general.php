@@ -908,12 +908,8 @@ function smartTime($then, $precise = false)
 
 	// If the time was within the last 48 hours, show a relative time (eg. 2 hours ago.)
 	if ($ago >= 0 and $ago < 48 * 60 * 60) return relativeTime($then, $precise);
-
-	// If the time is within the last half a year or the next half a year, show just a month and a day.
-	elseif ($ago < 180 * 24 * 60 * 60) return strftime("%b %e", $then);
-
 	// Otherwise, show the month, day, and year.
-	else return strftime("%Y %m ".($precise ? "%e " : ""), $then);
+	else return strftime("%F", $then);
 }
 
 
