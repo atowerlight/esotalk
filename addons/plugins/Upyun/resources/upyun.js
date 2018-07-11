@@ -87,16 +87,16 @@ function upload(file, $target) {
       dataType: 'json',
       timeout: 1000 * 60 * 15 // 15 minutes
     })
+    .then(function (res) {
+      return $.Deferred().resolve(res, sign.bucket)
+    })
     .fail(function ($xhr, status, res, error) {
       if (status === 'timeout') {
         // TODO i18n
         ETMessages.showMessage('上传超时', 'warning')
       } else {
-        ETMessages.showMessage('上传失败' + res.message, 'warning')
+        ETMessages.showMessage('上传失败 ' + res.message, 'warning')
       }
-    })
-    .then(function (res) {
-      return $.Deferred().resolve(res, sign.bucket)
     })
   })
 
