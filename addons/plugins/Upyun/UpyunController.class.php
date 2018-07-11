@@ -28,7 +28,6 @@ class UpyunController extends ETController {
       'expiration' => time() + $expiration,
       'save-key' => '/esotalk/{year}/{mon}/{day}/{filename}{.suffix}',
       'content-length-range' => '1024,12582912', // 1K - 12M
-      'x-gmkerl-rotate' => 'auto',
     );
 
 
