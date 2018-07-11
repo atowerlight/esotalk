@@ -16,7 +16,6 @@ if (!defined("IN_ESOTALK")) exit;
 		<title><?php echo sanitizeHTML($data["pageTitle"]); ?></title>
 		<meta charset='<?php echo T("charset", "utf-8"); ?>'>
 		<?php if (!empty($data["head"])) echo $data["head"]; ?>
-		<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
 		<style>
 			body {
 				margin: 0;
@@ -25,7 +24,7 @@ if (!defined("IN_ESOTALK")) exit;
 			}
 			body, input, textarea, select {
 				font-size: 16px;
-				font-family: open sans, helvetica, arial, sans-serif;
+				font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
 			}
 			a {
 				text-decoration: none;
