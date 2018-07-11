@@ -87,12 +87,12 @@ function upload(file, $target) {
       dataType: 'json',
       timeout: 1000 * 60 * 15 // 15 minutes
     })
-    .fail(function ($xhr, status, error) {
+    .fail(function ($xhr, status, res, error) {
       if (status === 'timeout') {
         // TODO i18n
         ETMessages.showMessage('上传超时', 'warning')
       } else {
-        ETMessages.showMessage('上传失败', 'warning')
+        ETMessages.showMessage('上传失败' + res.message, 'warning')
       }
     })
     .then(function (res) {
