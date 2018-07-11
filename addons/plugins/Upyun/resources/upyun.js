@@ -110,13 +110,14 @@ function upload(file, $target) {
   ETConversation.wrapText($target, placeholder, '', '', '')
   deferred
   .done(function (res, bucket) {
-    result = '[url=//' + bucket + '.b0.upaiyun.com' + res.url + ']'
-      // TODO thumb name setting
-      // TODO https?
-      + '[img]//' + bucket + '.b0.upaiyun.com' + res.url + '!s[/img]'
-      + '[i]' + res['image-width'] + 'x' + res['image-height'] + '[/i]'
-      + '[/url]'
-  })
+    var w = res['image-width']
+		var h = res['image-height']
+			if (w <= 300 && h <= 300) {
+				result = '[img]//' + bucket + '.b0.upaiyun.com' + res.url + '[/img]'
+			} else {
+				result = '[url=//' + bucket + '.b0.upaiyun.com' + res.url + ']' + '[img]//' + bucket + '.b0.upaiyun.com' + res.url + '!s[/img]' + '[i]' + w + 'x' + h + '[/i]' + '[/url]'
+			}
+		})
   .always(function () {
     var cpos = $target.getSelection()
     $target.val($target.val().replace(placeholder, result))
