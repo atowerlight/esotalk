@@ -112,7 +112,7 @@ function upload(file, $target) {
   .done(function (res, bucket) {
     var w = res['image-width']
     var h = res['image-height']
-			if (w <= 300 && h <= 300) {
+			if (w <= 500 && h <= 500) {
 				result = '[upyun]//' + bucket + '.b0.upaiyun.com' + res.url + '[/upyun]'
       } else if (w == undefined) {
         result = '[upyun]//' + bucket + '.b0.upaiyun.com' + res.url + '[/upyun]'
