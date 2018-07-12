@@ -98,6 +98,7 @@ public function action_login()
 		$this->renderMessage("Error", sprintf(T("message.emailNotYetConfirmed"), URL("user/sendConfirmation/".$form->getValue("username"))));
 		return;
 	}
+
 	if (isset($form->errors["accountNotYetApproved"])) {
 		$this->renderMessage("Error", T("message.accountNotYetApproved"));
 		return;
@@ -325,8 +326,12 @@ public function action_sendConfirmation($username = "")
 
 	// Get the requested member.
 	$member = ET::memberModel()->get(array("m.username" => $username, "m.confirmed" => false))[0];
+	$member_mail = ET::memberModel()->get(array("m.email" => $username, "m.confirmed" => false))[0];
 	if ($member) {
 		$this->sendConfirmationEmail($member["email"], $member["username"], $member["memberId"].$member["resetPassword"]);
+		$this->renderMessage(T("Success!"), T("message.confirmEmail"));
+	} elseif ($member_mail) {
+		$this->sendConfirmationEmail($member_mail["email"], $member_mail["username"], $member_mail["memberId"].$member_mail["resetPassword"]);
 		$this->renderMessage(T("Success!"), T("message.confirmEmail"));
 	}
 	else $this->redirect(URL(""));
