@@ -1,0 +1,22 @@
+.sheet .buttons .captcha {
+  float: right;
+  margin-left: 10px;
+}
+.captcha img {
+  width: 102px;
+  height: 34px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.captcha img.loading {
+  cursor: wait;
+  background-position: center center;
+  box-shadow: inset 0 0 1px rgba(0,0,0,.5);
+}
+.captcha input {
+  padding: 7px;
+  width: 72px;
+}
+.fieldGroup .captcha input {
+  width: 154px;
+}

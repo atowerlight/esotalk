@@ -9,7 +9,10 @@ ET::$pluginInfo['Upyun'] = array(
   'author' => 'rhyzx',
   'authorEmail' => 'rhyzix@gmail.com',
   'authorURL' => 'https://3dgundam.org',
-  'license' => 'MIT'
+  'license' => 'MIT',
+  'dependencies' => array(
+    'Photoswipe' => '0',
+  )
 );
 
 class ETPlugin_Upyun extends ETPlugin {
