@@ -32,7 +32,7 @@ class ETSkin_Default extends ETSkin {
 public function handler_init($sender)
 {
 	$sender->addCSSFile("core/skin/base.css", true);
-	$sender->addCSSFile("core/skin/font-awesome.css", true);
+	$sender->addToHead("<link href='https://cdn.bootcss.com/font-awesome/3.2.1/css/font-awesome.min.css' rel='stylesheet'>");
 	$sender->addCSSFile($this->resource("styles.css"), true);
 
 	// If we're viewing from a mobile browser, add the mobile CSS and change the master view.
