@@ -10,10 +10,7 @@ ET::$pluginInfo["Photoswipe"] = array(
 	'authorEmail' => 'rhyzix@gmail.com',
 	'authorURL' => 'https://3dgundam.org',
 	'license' => 'MIT',
-	"priority" => "0",
-	'dependencies' => array(
-		'Upyun' => '0',
-	  )
+	"priority" => "0"
 );
 
 class ETPlugin_Photoswipe extends ETPlugin {
