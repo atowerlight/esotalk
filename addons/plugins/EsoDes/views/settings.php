@@ -12,7 +12,7 @@ $form = $data["EsoDesSettingsForm"];
 <ul class='form'>
 
 <li>
-<label><?php echo T("Forum Description"); ?></label>
+<label><?php echo T("Forum 论坛描述"); ?></label>
 <?php echo $form->input("forumDes", "text"); ?>
 <small><?php echo T("message.forumDesHelp"); ?></small>
 </li>

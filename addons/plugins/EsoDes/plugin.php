@@ -21,7 +21,7 @@ class ETPlugin_EsoDes extends ETPlugin {
 
 	public function init()
 	{
-		ET::define("message.forumDesHelp", "You can customize view of the description via CSS.");
+		ET::define("message.forumDesHelp", "请输入论坛描述，将出现在论坛Logo之后");
 	}
 
 	public function handler_init($sender, $menu = 0)

@@ -39,7 +39,7 @@ class ETPlugin_BanEmail extends ETPlugin {
 				$pos = strpos($email,$address);
 				if ($pos !== false) {
 					$found = true;
-					$error = $search_mail . " is not allow to register.";
+					$error = $search_mail . "被管理员禁止";
 					break;
 				}
 			}
