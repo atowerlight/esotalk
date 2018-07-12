@@ -8,6 +8,7 @@ function hotkey()
     if((a==76)&&(event.altKey)){ETConversation.wrapText($("textarea"), "[url=http://example.com]", "[/url]", "http://example.com", "link text")}
     if((a==71)&&(event.altKey)){ETConversation.wrapText($("textarea"), "[img]", "[/img]", "", "http://example.com/image.jpg")}
     if((a==67)&&(event.altKey)){ETConversation.wrapText($("textarea"), "[code]", "[/code]")}
+    if((a==75)&&(event.altKey)){ETConversation.togglePreview("p1",this.checked)}
 }
 document.onkeydown = hotkey;
 
