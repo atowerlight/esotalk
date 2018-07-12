@@ -245,7 +245,7 @@ public function linksCallback($matches)
 public function formatLink($url, $text = null)
 {
 	if ($text === null) $text = $url;
-	if (!preg_match("/^(\w+:\/\/)/", $url)) $url = "http://".$url;
+	if (!preg_match("/^(\w+:\/\/|\/)/", $url)) $url = "http://$url";
 
 	// If this is an internal link...
 	$baseURL = C("esoTalk.baseURL");
