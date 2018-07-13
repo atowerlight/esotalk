@@ -59,6 +59,13 @@ $(function() {
 <li class='sep'></li>
 
 <li>
+<label><?php echo T("Forum Favicon"); ?></label>
+<?php echo $form->input("forumFaviconImage", "file", array("class" => "text")); ?></label>
+</li>
+
+<li class='sep'></li>
+
+<li>
 <label><?php echo T("Home page"); ?></label>
 <div class='subText'><?php echo T("Choose what people will see when they first visit your forum."); ?></div>
 <div class='checkboxGroup'>

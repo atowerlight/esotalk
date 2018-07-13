@@ -16,6 +16,9 @@ if (!defined("IN_ESOTALK")) exit;
 <meta charset='<?php echo T("charset", "utf-8"); ?>'>
 <title><?php echo sanitizeHTML($data["pageTitle"]); ?></title>
 <?php echo $data["head"]; ?>
+
+<?php echo $data["forumFavicon"]; ?>
+
 </head>
 
 <body class='<?php echo $data["bodyClass"]; ?>'>

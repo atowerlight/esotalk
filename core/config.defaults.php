@@ -54,6 +54,7 @@ $config["esoTalk.database.connectionOptions"] = array(
 // Basic forum details.
 $config["esoTalk.forumTitle"] = "";
 $config["esoTalk.forumLogo"] = false; // Path to an image file to replace the title (don't make it too big or it'll stretch the header!)
+$config["esoTalk.forumFavicon"] = false;
 $config["esoTalk.language"] = "Chinese";
 $config["esoTalk.baseURL"] = "";
 $config["esoTalk.cdnURL"] = "";

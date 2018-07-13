@@ -35,6 +35,7 @@ public function action_index()
 	$form->setValue("cdnURL", C("esoTalk.cdnURL"));
 	$form->setValue("language", C("esoTalk.language"));
 	$form->setValue("forumHeader", C("esoTalk.forumLogo") ? "image" : "title");
+	$form->setValue("forumFavicon", C("esoTalk.forumFavicon"));
 	$form->setValue("defaultRoute", C("esoTalk.defaultRoute"));
 	$form->setValue("forumVisibleToGuests", C("esoTalk.visibleToGuests"));
 	$form->setValue("memberListVisibleToGuests", C("esoTalk.members.visibleToGuests"));
@@ -60,13 +61,15 @@ public function action_index()
 				$forumLogo = !empty($_FILES["forumHeaderImage"]['tmp_name']) ? $this->uploadHeaderImage($form) : C("esoTalk.forumLogo");
 			}
 		}
-
+		$forumFavicon = false;
+		$forumFavicon = !empty($_FILES["forumFaviconImage"]['tmp_name']) ? $this->uploadFaviconImage($form) : C("esoTalk.forumFavicon");
 		// Construct an array of config options to write.
 		$config = array(
 			"esoTalk.forumTitle" => $form->getValue("forumTitle"),
 			"esoTalk.cdnURL" => $form->getValue("cdnURL"),
 			"esoTalk.language" => $form->getValue("language"),
 			"esoTalk.forumLogo" => $forumLogo,
+			"esoTalk.forumFavicon" => $forumFavicon,
 			"esoTalk.defaultRoute" => $form->getValue("defaultRoute"),
 			"esoTalk.visibleToGuests" => $form->getValue("forumVisibleToGuests"),
 			"esoTalk.members.visibleToGuests" => $form->getValue("forumVisibleToGuests") and $form->getValue("memberListVisibleToGuests"),
@@ -111,9 +114,10 @@ protected function uploadHeaderImage($form)
 
 		// Validate and get the uploaded file from this field.
 		$file = $uploader->getUploadedFile("forumHeaderImage");
+		$str = substr(md5(time()), 0, 4);
 
 		// Save it as an image, restricting it to a maximum size.
-		$logo = $uploader->saveAsImage($file, PATH_UPLOADS."/logo", 500, 26, "max");
+		$logo = $uploader->saveAsImage($file, PATH_UPLOADS."/logo_$str", 500, 26, "max");
 		$logo = str_replace(PATH_UPLOADS, "uploads", $logo);
 
 		// Delete the old logo (if we didn't just overwrite it.)
@@ -125,6 +129,32 @@ protected function uploadHeaderImage($form)
 
 		// If something went wrong up there, add the error message to the form.
 		$form->error("forumHeaderImage", $e->getMessage());
+
+	}
+}
+protected function uploadFaviconImage($form)
+{
+	$uploader = ET::uploader();
+
+	try {
+
+		// Validate and get the uploaded file from this field.
+		$file = $uploader->getUploadedFile("forumFaviconImage");
+		$str = substr(md5(time()), 0, 4);
+
+		// Save it as an image, restricting it to a maximum size.
+		$favicon = $uploader->saveAsImage($file, PATH_UPLOADS."/favicon_$str", 64, 64, "max");
+		$favicon = str_replace(PATH_UPLOADS, "uploads", $favicon);
+
+		// Delete the old logo (if we didn't just overwrite it.)
+		if ($favicon != C("esoTalk.forumFavicon")) @unlink(C("esoTalk.forumFavicon"));
+
+		return $favicon;
+
+	} catch (Exception $e) {
+
+		// If something went wrong up there, add the error message to the form.
+		$form->error("forumFaviconImage", $e->getMessage());
 
 	}
 }

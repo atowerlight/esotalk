@@ -473,6 +473,10 @@ public function render($view = "")
 			if ($logo) $size = getimagesize($logo);
 			$data["forumTitle"] = $logo ? "<img src='".getWebPath($logo)."' {$size[3]} alt='$title'/>" : $title;
 
+			// Add the forum favicon
+			$favicon = C("esoTalk.forumFavicon");
+			$data["forumFavicon"] = "<link href='".getWebPath($favicon)."' rel='shortcut icon'/>";
+
 			// Add the details for the "back" button.
 			$data["backButton"] = ET::$session->getNavigation($this->navigationId);
 
