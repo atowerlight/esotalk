@@ -351,6 +351,7 @@ public function action_autocomplete($input = "")
 		->select("memberId")
 		->select("username AS name")
 		->select("avatarFormat")
+		->select("avatarTime")
 		->select("email")
 		->from("member")
 		->where("username LIKE :username")
@@ -364,6 +365,7 @@ public function action_autocomplete($input = "")
 	foreach ($results as $k => $v) {
 		$results[$k]["avatar"] = avatar($v, "thumb");
 		unset($results[$k]["avatarFormat"]);
+		unset($results[$k]["avatarTime"]);
 		unset($results[$k]["email"]);
 
 		// Convert spaces in the member name to non-breaking spaces.

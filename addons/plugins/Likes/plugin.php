@@ -37,7 +37,7 @@ public function action_conversationController_like($sender, $postId = false)
 		->setOnDuplicateKey("memberId", ET::$session->userId)
 		->exec();
 
-	$post["likes"][ET::$session->userId] = array("avatarFormat" => ET::$session->user["avatarFormat"], "username" => ET::$session->user["username"]);
+	$post["likes"][ET::$session->userId] = array("avatarFormat" => ET::$session->user["avatarFormat"], "username" => ET::$session->user["username"], "avatarTime" => ET::$session->user["avatarTime"]);
 
 	$sender->json("names", $this->getNames($post["likes"]));
 	$sender->render();
@@ -91,7 +91,7 @@ public function handler_postModel_getPostsAfter($sender, &$posts)
 	if (!count($postsById)) return;
 
 	$result = ET::SQL()
-		->select("postId, m.memberId, m.email, username, avatarFormat")
+		->select("postId, m.memberId, m.email, username, avatarFormat, avatarTime")
 		->from("like l")
 		->from("member m", "m.memberId=l.memberId", "left")
 		->where("postId IN (:ids)")
@@ -99,7 +99,7 @@ public function handler_postModel_getPostsAfter($sender, &$posts)
 		->exec();
 
 	while ($row = $result->nextRow()) {
-		$postsById[$row["postId"]]["likes"][$row["memberId"]] = array("memberId" => $row["memberId"], "username" => $row["username"], "email" => $row["email"], "avatarFormat" => $row["avatarFormat"]);
+		$postsById[$row["postId"]]["likes"][$row["memberId"]] = array("memberId" => $row["memberId"], "username" => $row["username"], "email" => $row["email"], "avatarFormat" => $row["avatarFormat"], "avatarTime" => $row["avatarTime"]);
 	}
 }
 

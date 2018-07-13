@@ -247,6 +247,7 @@ public function notificationMessages($notifications)
 		$avatar = avatar(array(
 			"memberId" => $notification["fromMemberId"],
 			"avatarFormat" => $notification["avatarFormat"],
+			"avatarTime" => $notification["avatarTime"],
 			"email" => $notification["email"]
 		), "thumb");
 		$this->message("<a href='".$notification["link"]."' class='messageLink'><span class='action'>".$avatar.$notification["body"]."</span></a>", "popup notificationMessage autoDismiss hasSprite");

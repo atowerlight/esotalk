@@ -21,6 +21,7 @@ foreach ($conversation["membersAllowed"] as $member) {
 	// Format the entity's name depending on its type.
 	if ($member["type"] == "group") {
 		$member["avatarFormat"] = null;
+		$member["avatarTime"] = null;
 		$member["name"] = groupName($member["name"], true);
 	}
 	else {

@@ -57,6 +57,7 @@ echo "<span class='action'>".avatar(array(
 		"memberId" => $conversation["lastPostMemberId"],
 		"username" => $conversation["lastPostMember"],
 		"avatarFormat" => $conversation["lastPostMemberAvatarFormat"],
+		"avatarTime" => $conversation["lastPostMemberAvatarTime"],
 		"email" => $conversation["lastPostMemberEmail"]
 	), "thumb"), " ",
 	sprintf(T("%s posted %s"),

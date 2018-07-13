@@ -146,6 +146,7 @@ public function get($wheres = array())
 		->select("c.*")
 		->select("sm.username", "startMember")
 		->select("sm.avatarFormat", "startMemberAvatarFormat")
+		->select("sm.avatarTime", "startMemberAvatarTime")
 		->select("ch.title", "channelTitle")
 		->select("ch.description", "channelDescription")
 		->select("ch.slug", "channelSlug")
@@ -270,6 +271,7 @@ public function getEmptyConversation()
 		"startMemberId" => ET::$session->userId,
 		"startMemberName" => ET::$session->user["username"],
 		"startMemberAvatarFormat" => ET::$session->user["avatarFormat"],
+		"startMemberAvatarTime" => ET::$session->user["avatarTime"],
 		"countPosts" => 0,
 		"lastRead" => 0,
 		"draft" => "",
@@ -377,6 +379,7 @@ public function getMembersAllowed($conversation)
 		->select("m.username")
 		->select("m.email")
 		->select("m.avatarFormat")
+		->select("m.avatarTime")
 		->select("m.account")
 		->select("GROUP_CONCAT(g.groupId)")
 		->groupBy("m.memberId");
@@ -385,6 +388,7 @@ public function getMembersAllowed($conversation)
 		->select("'group'", "type")
 		->select("s.id", "id")
 		->select("g.name")
+		->select("NULL")
 		->select("NULL")
 		->select("NULL")
 		->select("NULL")
@@ -404,7 +408,7 @@ public function getMembersAllowed($conversation)
 				if ($member["id"] == GROUP_ID_ADMINISTRATOR or $member["id"] == GROUP_ID_MEMBER) {
 					if ($member["id"] == GROUP_ID_ADMINISTRATOR) $name = ACCOUNT_ADMINISTRATOR;
 					elseif ($member["id"] == GROUP_ID_MEMBER) $name = ACCOUNT_MEMBER;
-					$membersAllowed[] = array("type" => "group", "id" => $member["id"], "name" => $name, "email" => null, "avatarFormat" => null, "groups" => null);
+					$membersAllowed[] = array("type" => "group", "id" => $member["id"], "name" => $name, "email" => null, "avatarFormat" => null, "avatarTime" => null, "groups" => null);
 				}
 
 				else $groups[] = $member["id"];
@@ -445,13 +449,13 @@ public function getMembersAllowed($conversation)
 
 	// Go through the results and construct our final "members allowed" array.
 	while ($entity = $result->nextRow()) {
-		list($type, $id, $name, $email, $avatarFormat, $account, $groups) = array_values($entity);
+		list($type, $id, $name, $email, $avatarFormat, $avatarTime, $account, $groups) = array_values($entity);
 		$groups = ET::groupModel()->getGroupIds($account, explode(",", $groups));
 		if ($type == "group") {
 			if ($id == GROUP_ID_ADMINISTRATOR) $name = ACCOUNT_ADMINISTRATOR;
 			elseif ($id == GROUP_ID_MEMBER) $name = ACCOUNT_MEMBER;
 		}
-		$membersAllowed[] = array("type" => $type, "id" => $id, "name" => $name, "email" => $email, "avatarFormat" => $avatarFormat, "groups" => $groups);
+		$membersAllowed[] = array("type" => $type, "id" => $id, "name" => $name, "email" => $email, "avatarFormat" => $avatarFormat, "avatarTime" => $avatarTime, "groups" => $groups);
 	}
 
 	// Sort the entities by name.
@@ -1185,6 +1189,7 @@ public function getMemberFromName($name)
 		->select("m.memberId")
 		->select("m.username")
 		->select("m.avatarFormat")
+		->select("m.avatarTime")
 		->select("m.account")
 		->select("GROUP_CONCAT(g.groupId)", "groups")
 		->from("member m")
@@ -1203,7 +1208,7 @@ public function getMemberFromName($name)
 	// Get the result and return it as an array.
 	$row = $result->firstRow();
 	$row["groups"] = ET::groupModel()->getGroupIds($row["account"], explode(",", $row["groups"]));
-	return array("type" => "member", "id" => $row["memberId"], "name" => $row["username"], "avatarFormat" => $row["avatarFormat"], "groups" => $row["groups"]);
+	return array("type" => "member", "id" => $row["memberId"], "name" => $row["username"], "avatarFormat" => $row["avatarFormat"], "avatarTime" => $row["avatarTime"], "groups" => $row["groups"]);
 }
 
 
