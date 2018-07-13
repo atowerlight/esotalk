@@ -16,6 +16,9 @@ if (!defined("IN_ESOTALK")) exit;
 <meta charset='<?php echo T("charset", "utf-8"); ?>'>
 <title><?php echo sanitizeHTML($data["pageTitle"]); ?></title>
 <?php echo $data["head"]; ?>
+
+<?php echo $data["forumFavicon"]; ?>
+
 <script>
 // Turn off JS effects and fixed positions, and disable tooltips.
 jQuery.fx.off = true;
@@ -59,7 +62,7 @@ $(function() {
 <?php echo $data["userMenuItems"]; ?>
 </ul>
 
-<h1 id='forumTitle'><a href='<?php echo URL(""); ?>'><?php echo C("esoTalk.forumTitle"); ?></a></h1>
+<h1 id='forumTitle'><a href='<?php echo URL(""); ?>'><?php echo $data["forumTitle"]; ?></a></h1>
 
 </div>
 </div>
