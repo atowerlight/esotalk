@@ -373,7 +373,7 @@ public function action_removeAvatar($memberId = "")
 	}
 
 	// Remove the avatar file.
-	@unlink(PATH_UPLOADS."/avatars/".$member["memberId"].".".$member["avatarFormat"]);
+	@unlink(PATH_UPLOADS."/avatars/".$member["memberId"]."_".$member["avatarTime"].".".$member["avatarFormat"]);
 
 	// Clear the member's avatar format field.
 	ET::memberModel()->updateById($member["memberId"], array("avatarFormat" => null));

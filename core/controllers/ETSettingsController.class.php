@@ -173,7 +173,7 @@ public function action_general()
 	elseif ($form->validPostBack("removeAvatar")) {
 
 		// Delete the avatar file and set the member's avatarFormat to null.
-		@unlink(PATH_UPLOADS."/avatars/".$member["memberId"].".".$member["avatarFormat"]);
+		@unlink(PATH_UPLOADS."/avatars/".$member["memberId"]."_".$member["avatarTime"].".".$member["avatarFormat"]);
 		ET::memberModel()->updateById($member["memberId"], array("avatarFormat" => null));
 
 		$this->message(T("message.changesSaved"), "success autoDismiss");
@@ -367,15 +367,22 @@ public function saveAvatar($form, $key, &$preferences)
 	$uploader = ET::uploader();
 
 	try {
+		// remove previous img
+		$member = $this->profile("general");
+		@unlink(PATH_UPLOADS."/avatars/".$member["memberId"]."_".$member["avatarTime"].".".$member["avatarFormat"]);
 
 		// Validate and get the uploaded file from this field.
 		$file = $uploader->getUploadedFile($key);
+		$time = substr(md5(time()), 0, 4);
 
 		// Save it as an image, cropping it to the configured avatar size.
-		$avatar = $uploader->saveAsImage($file, PATH_UPLOADS."/avatars/".ET::$session->userId, C("esoTalk.avatars.width"), C("esoTalk.avatars.height"), "crop");
+		$avatar = $uploader->saveAsImage($file, PATH_UPLOADS."/avatars/".ET::$session->userId."_".$time, C("esoTalk.avatars.width"), C("esoTalk.avatars.height"), "crop");
 
 		// Update the member's avatarFormat field to the avatar file's extension.
 		ET::memberModel()->updateById(ET::$session->userId, array("avatarFormat" => pathinfo($avatar, PATHINFO_EXTENSION)));
+
+		// Update the member's avatarFormat field to the avatar file's extension.
+		ET::memberModel()->updateById(ET::$session->userId, array("avatarTime" => $time));
 
 	} catch (Exception $e) {
 

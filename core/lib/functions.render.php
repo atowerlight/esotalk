@@ -174,7 +174,7 @@ function avatar($member = array(), $className = "")
 	// Construct the avatar path from the provided information.
 	if (!empty($member["memberId"]) and !empty($member["avatarFormat"])) {
 		$cdn = C("esoTalk.cdnURL");
-		$file = "uploads/avatars/{$member["memberId"]}.{$member["avatarFormat"]}";
+		$file = "uploads/avatars/{$member["memberId"]}_{$member["avatarTime"]}.{$member["avatarFormat"]}";
 		$url = getWebPath($file);
 		return "<img src='$cdn$url' alt='{$member["memberId"]}' class='avatar $className'/>";
 	}
