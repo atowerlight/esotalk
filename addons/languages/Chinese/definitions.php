@@ -174,6 +174,7 @@ $definitions["Forgot?"] = "忘记了?";
 $definitions["Forgot Password"] = "忘记密码";
 $definitions["Forum"] = "社区";
 $definitions["Forum header"] = "社区顶部";
+$definitions["Forum Favicon"] = "浏览器图标";
 $definitions["Forum language"] = "社区语言";
 $definitions["Forum privacy"] = "社区信息";
 $definitions["Forum Settings"] = "社区设置";

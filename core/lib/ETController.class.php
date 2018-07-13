@@ -471,11 +471,11 @@ public function render($view = "")
 			$logo = C("esoTalk.forumLogo");
 			$title = C("esoTalk.forumTitle");
 			if ($logo) $size = getimagesize($logo);
-			$data["forumTitle"] = $logo ? "<img src='".getWebPath($logo)."' {$size[3]} alt='$title'/>" : $title;
+			$data["forumTitle"] = $logo ? "<img src='".C("esoTalk.cdnURL").getWebPath($logo)."' {$size[3]} alt='$title'/>" : $title;
 
 			// Add the forum favicon
 			$favicon = C("esoTalk.forumFavicon");
-			$data["forumFavicon"] = "<link href='".getWebPath($favicon)."' rel='shortcut icon'/>";
+			$data["forumFavicon"] = "<link href='".C("esoTalk.cdnURL").getWebPath($favicon)."' rel='shortcut icon'/>";
 
 			// Add the details for the "back" button.
 			$data["backButton"] = ET::$session->getNavigation($this->navigationId);
