@@ -82,7 +82,13 @@ public function autoLink( $link = array())
 		return '<iframe src="https://www.facebook.com/video/embed?video_id='.$params['v'].'" width="540" height="420" frameborder="0"></iframe>';
 	// youku
   else if( preg_match( '/^(?:v\.)?youku\.com\/v_show\/id_([^\/]+)\.html/i', $link[2], $matches ))
-	  return '<iframe width="'.$width.'" height="'.$height.'"  src="https://player.youku.com/embed/'.$matches[1].'" frameborder="0" allowfullscreen></iframe>';
+		return '<iframe width="'.$width.'" height="'.$height.'"  src="https://player.youku.com/embed/'.$matches[1].'" frameborder="0" allowfullscreen></iframe>';
+	// Github Commit
+	else if( preg_match( '/^(?:www\.)?github\.com\/([^\/]+)\/([^\/]+)\/commit\/([^\/]+)/i', $link[2], $matches ))
+	return "<a href='".$link[0]."' rel='nofollow external' target='_blank' class='link-external'>".$matches[1].'/'.$matches[2].'@'.substr($matches[3], 0, 7)." <i class='icon-external-link'></i></a>";
+	// Github Issues
+	else if( preg_match( '/^(?:www\.)?github\.com\/([^\/]+)\/([^\/]+)\/issues\/([^\/]+)/i', $link[2], $matches ))
+	return "<a href='".$link[0]."' rel='nofollow external' target='_blank' class='link-external'>".$matches[1].'/'.$matches[2].'#'.$matches[3]." <i class='icon-external-link'></i></a>";
 }
 
 
