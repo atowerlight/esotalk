@@ -6,32 +6,6 @@ $(document).off('click.captcha')
   reload($(this))
 })
 
-if (typeof ETConversation !== 'undefined') {
-  var startConversation = ETConversation.startConversation
-  ETConversation.startConversation = function () {
-    startConversation.apply(startConversation, arguments)
-    .done(function (res) {
-      if (typeof res.redirect !== 'undefined') return
-      reload($('#reply .captcha img'))
-      $('#reply .captcha input').val('')
-    })
-    .fail(function () {
-      reload($('#reply .captcha img'))
-      $('#reply .captcha input').val('')
-    })
-  }
-
-  var addReply = ETConversation.addReply
-  ETConversation.addReply = function () {
-    addReply.apply(addReply, arguments)
-    .always(function () {
-      reload($('#reply .captcha img'))
-      $('#reply .captcha input').val('')
-    })
-  }
-}
-
-
 function reload($img) {
   var t = $.now()
 
