@@ -16,10 +16,10 @@ ET::$pluginInfo["Photoswipe"] = array(
 class ETPlugin_Photoswipe extends ETPlugin {
 
 	public function handler_conversationController_renderBefore($sender){
-		$PhotoswipeCSS= "<link rel=\"stylesheet\" href=\"//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.css\">
-<link rel=\"stylesheet\" href=\"//cdn.bootcss.com/photoswipe/4.1.2/default-skin/default-skin.min.css\">";
-		$PhotoswipeJS = "<script src=\"//cdn.bootcss.com/photoswipe/4.1.2/photoswipe.min.js\"></script>
-<script src=\"//cdn.bootcss.com/photoswipe/4.1.2/photoswipe-ui-default.min.js\"></script>		
+		$PhotoswipeCSS= "<link rel=\"stylesheet\" href=\"//cdn.bootcss.com/photoswipe/4.0.5/photoswipe.min.css\">
+<link rel=\"stylesheet\" href=\"//cdn.bootcss.com/photoswipe/4.0.5/default-skin/default-skin.min.css\">";
+		$PhotoswipeJS = "<script src=\"//cdn.bootcss.com/photoswipe/4.0.5/photoswipe.min.js\"></script>
+<script src=\"//cdn.bootcss.com/photoswipe/4.0.5/photoswipe-ui-default.min.js\"></script>		
 ";
 
 		$sender->addToHead($PhotoswipeCSS);
