@@ -125,9 +125,6 @@ public function handler_format_format($sender)
 	// Headers: [h]header[/h]
 	$replacement = $sender->inline ? "<b>$1</b>" : "</p><h4>$1</h4><p>";
 	$sender->content = preg_replace("/\[h\](.*?)\[\/h\]/", $replacement, $sender->content);
-	require_once ('Slimdown.php');
-	$sender->content = Slimdown::render($sender->content);
-
 }
 
 
