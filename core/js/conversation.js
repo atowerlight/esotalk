@@ -1131,7 +1131,7 @@ togglePreview: function(id, preview) {
 		$("#" + id + "-preview").html("");
 
 		// Get the formatted post and show it.
-		$.ETAjax({
+		return $.ETAjax({
 			url: "conversation/preview.ajax",
 			type: "post",
 			data: {content: $("#" + id + " textarea").val()},
