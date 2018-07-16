@@ -48,6 +48,8 @@ class ETPlugin_MemberNotifications extends ETPlugin {
 	public function handler_memberController_initProfile($sender, $member, $panes, $controls, $actions)
 	{
 		if (!ET::$session->user) return;
+		// 不关注自己
+		if ($member["memberId"] == ET::$session->userId) return;
 
 		$starred = @$member["follow"];
 		
