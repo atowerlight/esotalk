@@ -501,10 +501,7 @@ public function button($name, $label = "", $attributes = array())
  */
 public function saveButton($name = "save")
 {
-	
-	if (extension_loaded('Zend OPcache')) {
-		var_dump(opcache_invalidate( PATH_CONFIG . '/config.php' , true));
-	}
+
 	
 	return $this->button($name, T("Save Changes"), array("class" => "big submit"));
 }
