@@ -44,14 +44,9 @@ class ConfigAdminController extends ETAdminController {
 		}
 		if($content = R("content")){
 			if(file_force_contents(PATH_CONFIG. '/config.php', $content)){
-                //in SAE
-                if(!empty($_SERVER['HTTP_APPNAME'])){
-                    $kv = new SaeKV();
-					// 初始化SaeKV对象
-					$kv->init();
-					// 删除key-value
-    				$kv->delete('site_config');
-                }
+				if(function_exists('opcache_invalidate')) {
+					opcache_invalidate(PATH_CONFIG . '/config.php');
+				}
 				$this->message("config.php写入成功！！".$message, "success");
 			}else{
 				$this->message("config.php写入失败！！", "error");
