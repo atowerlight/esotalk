@@ -242,6 +242,9 @@ public static function writeConfig($values)
 	foreach ($config as $k => $v) $contents .= '$config["'.$k.'"] = '.var_export($v, true).";\n";
 	$contents .= "\n// Last updated by: ".ET::$session->user["username"]." (".ET::$session->ip.") @ ".date("r")."\n?>";
 	file_put_contents($file, $contents);
+	if(function_exists('opcache_invalidate')) {
+		opcache_invalidate(PATH_CONFIG . '/config.php');
+	}
 }
 
 
