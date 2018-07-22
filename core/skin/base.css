@@ -388,7 +388,7 @@ negative margins so they overlap the padding of the <li>. */
 
 
 /* Conversation privacy */
-#conversationPrivacy {margin:10px 0 40px; clear:both}
+#conversationPrivacy {margin:0px 0 0px; clear:both}
 #control-changeMembersAllowed {font-size:85%; margin-left:5px}
 
 
@@ -406,7 +406,7 @@ a.deleteLink:hover {color:#f00 !important; text-decoration:line-through}
 
 
 /* Conversation body */
-#conversationBody {margin-top:20px; clear:both}
+#conversationBody {margin-top:10px; clear:both}
 #conversationReply {margin:60px 0 30px; clear:left}
 
 
@@ -479,7 +479,7 @@ a.deleteLink:hover {color:#f00 !important; text-decoration:line-through}
 
 
 /* Post content (code, quotes, headers) */
-.postBody h4 {margin:1.2em 0 0.8em; font-size:130%; font-weight:normal}
+.postBody h4 {font-size:130%; font-weight:normal}
 
 blockquote {background:#f2f2f2; background:rgba(0, 0, 0, 0.05); margin:0 -15px 1em; padding:5px 7px 1px 36px; color:#555; position:relative}
 blockquote cite {display:inline; font-style:normal; font-weight:bold; margin-right:5px}
