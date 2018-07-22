@@ -36,7 +36,7 @@ p, ul, pre {line-height:1.6em}
 
 
 /* Conversation list: adjust the typography. */
-.conversationList .title {font-weight:300; font-size:16px}
+.conversationList .title {font-size:16px}
 .conversationList .unread .title a {font-weight:600}
 .conversationList .action * {font-weight:300}
 
@@ -50,7 +50,6 @@ p, ul, pre {line-height:1.6em}
 .postBody h4 {font-weight:300}
 .replyPlaceholder .postHeader h3 {font-weight:300}
 .postBody {line-height:1.75em; font-size:16px}
-.postBody a {font-weight:600}
 
 
 /* Tabs */
@@ -103,7 +102,7 @@ p, ul, pre {line-height:1.6em}
 
 
 /* Text inputs */
-input[type=text], input[type=password], input[type=number], input[type=email], textarea, .input {font-weight:300; background:#fff; border:1px solid; padding:5px; border-radius:3px; vertical-align:-1px; margin:0; -webkit-appearance:none}
+input[type=text], input[type=password], input[type=number], input[type=email], textarea, .input {background:#fff; border:1px solid; padding:5px; border-radius:3px; vertical-align:-1px; margin:0; -webkit-appearance:none}
 input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=number]:focus, input[type=email]:focus, .input:focus {outline:0}
 
 
