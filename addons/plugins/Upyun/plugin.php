@@ -9,10 +9,7 @@ ET::$pluginInfo['Upyun'] = array(
   'author' => 'rhyzx',
   'authorEmail' => 'rhyzix@gmail.com',
   'authorURL' => 'https://3dgundam.org',
-  'license' => 'MIT',
-  'dependencies' => array(
-    'Photoswipe' => '0',
-  )
+  'license' => 'MIT'
 );
 
 class ETPlugin_Upyun extends ETPlugin {
@@ -51,8 +48,7 @@ class ETPlugin_Upyun extends ETPlugin {
     
     // For images, either show them directly or show a thumbnail.
     if (in_array($extension, array("jpg", "jpeg", "png", "gif"))) {
-      if ($expanded) return "<span class='upyuns upyuns-image'><img src='".$url."' alt='".$filename."' title='".$filename."'></span>";
-      else return "<a href='".$url."' class='upyuns upyuns-image' target='_blank'><img src='".$upyun."' alt='".$filename."' title='".$filename."'><span class='filename'>".$extension.$url.$displayFilename."</span></a>";
+      return "<a href='".$url."' target='_blank'><img src='".$upyun."' alt='".$filename."' title='".$filename."'></a>";
     }
 
     // Embed video.

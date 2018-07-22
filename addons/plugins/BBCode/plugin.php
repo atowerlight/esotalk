@@ -103,7 +103,7 @@ public function handler_format_format($sender)
 	//$sender->content = preg_replace('/[\x00-\x09\x0B\x0C\x0E-\x1F\x7F]/', '', $sender->content);
 	// \[ (i|b|color|url|somethingelse) \=? ([^]]+)? \] (?: ([^]]*) \[\/\1\] )
 
-	$replacement = $sender->inline ? "[image]" : "<img src='$1' alt='-image-'/>";
+	$replacement = $sender->inline ? "[image]" : "<a href='$1' target='_blank'><img src='$1' alt='-image-'/></a>";
 	// url can be
 	// - https http ftp etc
 	// - protocal relative url eg. //foo.com/pic.png

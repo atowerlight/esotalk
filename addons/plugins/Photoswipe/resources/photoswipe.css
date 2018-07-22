@@ -1,4 +1,0 @@
-.link-external > img + i:not(.icon-external-link),
-.link-external > img + i:not(.icon-external-link) + .icon-external-link {
-  display: none;
-}

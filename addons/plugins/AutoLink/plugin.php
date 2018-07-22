@@ -65,7 +65,7 @@ public function autoLink( $link = array())
 	$height = 447;
 	// images
 	if( preg_match( '/\.([a-z]{1,5})$/i', $link[2], $matches ) && in_array( strtolower( $matches[1] ), $this->accepted_image_formats ) )
-	  return '<img class="auto-embedded" src="'.$link[1].$link[2].$link[3].'" alt="-image-" title="'.$link[1].$link[2].$link[3].'" />';
+	  return '<a href="'.$link[1].$link[2].$link[3].'" target="_blank“><img class="auto-embedded" src="'.$link[1].$link[2].$link[3].'" alt="-image-" title="'.$link[1].$link[2].$link[3].'" /></a>';
 	// youtube
 	else if( strcasecmp( 'www.youtube.com/watch', $link[2] ) == 0 && $this->params( $params, $link[3], 'v' ) )
 	  return '<iframe width="'.$width.'" height="'.$height.'"  src="'.$link[1].'www.youtube.com/embed/'.$params['v'].'" frameborder="0" allowfullscreen></iframe>';

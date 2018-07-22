@@ -103,7 +103,7 @@ function upload(file, $target) {
 
   // ==== insert content
 
-  var placeholder = '上传中 ' + file.name 
+  var placeholder = '上传中' + file.name 
 
   var pos = $target.getSelection()
   var result = ''
@@ -112,13 +112,7 @@ function upload(file, $target) {
   .done(function (res, bucket) {
     var w = res['image-width']
     var h = res['image-height']
-			if (w <= 500 && h <= 500) {
-				result = '[upyun]//' + bucket + '.b0.upaiyun.com' + res.url + '[/upyun]'
-      } else if (w == undefined) {
         result = '[upyun]//' + bucket + '.b0.upaiyun.com' + res.url + '[/upyun]'
-      } else {
-				result = '[url=//' + bucket + '.b0.upaiyun.com' + res.url + ']' + '[img]//' + bucket + '.b0.upaiyun.com' + res.url + '!s[/img]' + '[i]' + w + 'x' + h + '[/i]' + '[/url]'
-			}
 		})
   .always(function () {
     var cpos = $target.getSelection()
