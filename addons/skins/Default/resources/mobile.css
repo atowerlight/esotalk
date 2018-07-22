@@ -155,3 +155,5 @@ div.activity {padding:0 10px}
 #adminDashboard {margin:0 !important}
 #adminChannels .channelList div .controls {visibility:visible !important}
 #skinList .popupWrapper, #pluginList .popupWrapper, #languageList .popupWrapper {display:inline-block !important;}
+
+.postBody img {box-shadow: 0 0 4px #ccc !important; -moz-box-shadow: 0 0 4px #ccc !important; -webkit-box-shadow: 0 0 4px #ccc !important;}
