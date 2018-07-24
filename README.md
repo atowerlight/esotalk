@@ -1,43 +1,40 @@
 ## esoTalk 
 
-**Help develop *Flarum*, esoTalk's successor. [Flarum on GitHub &raquo;](https://github.com/flarum/core)**
+esoTalk 是一个免费的开源论坛软件，用PHP和MySQL构建。她的特点是：
 
-esoTalk is a free, open-source forum software package built with PHP and MySQL. It is designed to be:
+* **快速** esoTalk 的代码是简洁以及高效的，她的安装包甚至还没有超过 1MB。
+* **简单** esoTalk 所有的界面被设计得简洁、易用、快速。
+* **功能强大** 除了简洁，esoTalk 还有一群强大的插件与皮肤。
 
- - **Fast.** esoTalk's code was architectured to have little overhead and to be as efficient as possible.
- - **Simple.** All of esoTalk's interfaces are designed around simplicity, ease-of-use, and speed.
- - **Powerful.** Despite its simplicity, a large array of [plugins](http://esotalk.org/plugins) and [skins](http://esotalk.org/skins) are available to extend the functionality of esoTalk.
+### 捐赠
 
-esoTalk is developed by Toby Zerner in memory of his brother, Simon. 
+esoTalk 中文优化版由个人创建，由于本人还是学生没有收入来源。如果感兴趣请捐赠我们。
+[点击以了解](https://eso.towerlight.top/20)
 
-### Donate
+### 系统要求
 
-I've put many hundreds of hours and a lot of love into developing and maintaining esoTalk. If you have benefitted from it, why not consider [donating some schrapnel](http://esotalk.org/donate)? #feedtoby
+必须：PHP 5.3+ 以及 Mysql 5.5+
+非必须：重写功能 访问外网功能
 
-### System Requirements
+### 安装
 
-esoTalk requires **PHP 5.3+** and a modern version of **MySQL**.
+1. [下载 esoTalk](https://eso.towerlight.top/18)
+2. 将下载包放入网站跟目录中
+3. 创建好 Mysql 数据库
+4. 访问绑定域名
+5. 按照提示填写(若需开启伪静态请点击高级选项)
+6. 点击安装
+### 升级
 
-The PHP **gd extension** is required to support avatar uploading.
+1. 删除```index.php```文件以及```core cache addons```文件夹
+2. 上传最新完整安装包
+3. 解压
 
-esoTalk has only been tested on **Apache** and **lighttpd**. If you encounter a problem specific to any other web server, please [create an issue](https://github.com/esotalk/esoTalk/issues).
+### 遇到问题
 
-### Installation
+请到 [esoTalk 中文优化版讨论社区讨论](https://eso.towerlight.top/)
 
-Installing esoTalk is super easy. In brief, simply:
+### 版权
 
-1. [Download esoTalk.](http://esotalk.org/download)
-2. Extract and upload the files to your PHP-enabled web server.
-3. Visit the location in your web browser and follow the instructions in the installer.
-
-### Upgrading
-
-To upgrade esoTalk from an older version, simply:
-
-1. [Download](http://esotalk.org/download) the latest version of esoTalk.
-2. Extract and upload all of the files to your web-server, overwriting old ones. (Be careful that you don't lose custom plugins, skins, and languages you've uploaded to the addons directory, though!)
-3. Visit **your-forum.com/?p=upgrade** in your web browser and watch esoTalk complete the upgrade.
-
-### Troubleshooting
-
-If you are having problems installing esoTalk, view the [Troubleshooting](http://esotalk.org/docs/debug) documentation.
+原版: esoTalk GPL-2.0 BY Toby Zerner
+esoTalk 中文优化版 GPL-2.0 BY houzhenhong
