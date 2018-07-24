@@ -8,12 +8,12 @@ esoTalk 是一个免费的开源论坛软件，用PHP和MySQL构建。她的特�
 
 ### 捐赠
 
-esoTalk 中文优化版由个人创建，由于本人还是学生没有收入来源。如果感兴趣请捐赠我们。
+esoTalk 中文优化版由个人创建，由于本人还是学生没有收入来源。如果感兴趣请捐赠我们。\
 [点击以了解](https://eso.towerlight.top/20)
 
 ### 系统要求
 
-必须：PHP 5.3+ 以及 Mysql 5.5+
+必须：PHP 5.3+ 以及 Mysql 5.5+ \
 非必须：重写功能 访问外网功能
 
 ### 安装
@@ -36,5 +36,5 @@ esoTalk 中文优化版由个人创建，由于本人还是学生没有收入来
 
 ### 版权
 
-原版: esoTalk GPL-2.0 BY Toby Zerner
+原版: esoTalk GPL-2.0 BY Toby Zerner \
 esoTalk 中文优化版 GPL-2.0 BY houzhenhong
