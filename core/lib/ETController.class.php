@@ -307,7 +307,7 @@ public function init()
 			$this->addToMenu("statistics", "statistic-online", $stat);
 		}
 
-		$this->addToMenu("meta", "copyright", "<a href='http://esotalk.org/' target='_blank'>".T("Powered by")." esoTalk</a>");
+		$this->addToMenu("meta", "copyright", "<a href='https://eso.towerlight.top/' target='_blank'>".T("Powered by")." esoTalk 中文优化版</a>");
 
 		// Set up some default JavaScript files and language definitions.
 		$this->addJSFile("core/js/lib/jquery.js", true);
