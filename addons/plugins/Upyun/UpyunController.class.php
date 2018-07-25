@@ -26,7 +26,7 @@ class UpyunController extends ETController {
     $policy = array(
       'bucket' => $bucket,
       'expiration' => time() + $expiration,
-      'save-key' => '/esotalk/{year}/{mon}/{day}/{filename}{.suffix}',
+      'save-key' => '/esotalk/{year}/{mon}/{day}/{hour}_{min}_{sec}_{filename}{.suffix}',
       'content-length-range' => '1024,12582912', // 1K - 12M
     );
 
