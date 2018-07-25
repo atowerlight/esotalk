@@ -480,7 +480,7 @@ $definitions["message.languageUninstalled"] = "语言包卸载成功!";
 $definitions["message.locked"] = "话题被<strong>锁定</strong>,不能回复.";
 $definitions["message.loginToParticipate"] = "请登录再发布话题或回复";
 $definitions["message.logInToReply"] = "<a href='%1\$s' class='link-login'>登入</a> 或者 <a href='%2\$s' class='link-join'>注册</a>后参与话题.";
-$definitions["message.logInToSeeAllConversations"] = "<a href='".URL("user/login")."' class='link-login'>登入</a> 查看对访客不可见话题.";
+$definitions["message.logInToSeeAllConversations"] = "<a href='".URL("user/login")."' class='link-login'>登入</a> 以获得更强大搜索功能(搜索帖子内文中的中文字符)或者以查看对访客不可见话题.";
 $definitions["message.memberNotFound"] = "没有这个会员";
 $definitions["message.memberNoPermissionView"] = "这个会员没有权限查看话题所属的节点,不能加入.";
 $definitions["message.nameTaken"] = "你输入的名称已经被使用,不能再注册了";
