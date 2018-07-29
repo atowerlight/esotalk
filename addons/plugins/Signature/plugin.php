@@ -33,11 +33,11 @@ class ETPlugin_Signature extends ETPlugin {
 	{
 		if (!(ET::$session->preference("signature") == NULL))
 		{
-			return $form->input("signature", "text")." <small>(".T("Max charaters:")." ".C("plugin.Signature.characters").", ".T("BBCode Allowed").")</small><br /><br /><small>".ET::formatter()->init(ET::$session->preference("signature"))->format()->get()."</small>";
+			return $form->input("signature", "text")." <small>(".T("Max charaters:")." ".C("plugin.Signature.characters").")</small><br /><br /><small>".ET::formatter()->init(ET::$session->preference("signature"))->format()->get()."</small>";
 		}
 		else
 		{
-			return $form->input("signature", "text")." <small>(".T("Max charaters:")." ".C("plugin.Signature.characters").", ".T("BBCode Allowed").")</small><br /><br /><small>-</small>";
+			return $form->input("signature", "text")." <small>(".T("Max charaters:")." ".C("plugin.Signature.characters").")</small><br /><br /><small>-</small>";
 		}
 	}
 
@@ -57,7 +57,7 @@ class ETPlugin_Signature extends ETPlugin {
 	{
 		if ($post["deleteMemberId"]) return;
 
-		$signature = ET::formatter()->init($post["preferences"]["signature"])->format()->get();
+		$signature = $post["preferences"]["signature"];
 		if($signature!="")
 		addToArray($formatted["footer"], "<div class='signature'>".substr($signature,0,C("plugin.Signature.characters"))."</div>", 0);
 		
