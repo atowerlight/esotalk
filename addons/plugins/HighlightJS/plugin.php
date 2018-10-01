@@ -18,11 +18,11 @@ class ETPlugin_HighlightJS extends ETPlugin{
 		$HighlightJS = C('plugin.HighlightJS.customstyle');
 
 		if($HighlightJS)
-			$CustomHighlightCSS= "<link rel=\"stylesheet\" href=\"//cdn.bootcss.com/highlight.js/9.12.0/styles/".$HighlightJS.".min.css\">";
+			$CustomHighlightCSS= "<link rel=\"stylesheet\" href=\"//cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/".$HighlightJS.".min.css\">";
 		else
-			$CustomHighlightCSS= "<link rel=\"stylesheet\" href=\"//cdn.bootcss.com/highlight.js/9.12.0/styles/default.min.css\">";
+			$CustomHighlightCSS= "<link rel=\"stylesheet\" href=\"//cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/default.min.css\">";
 			
-		$JSHeader = "<script src=\"//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js\"></script>";
+		$JSHeader = "<script src=\"//cdn.jsdelivr.net/npm/highlight.js@9.12.0/lib/highlight.min.js\"></script>";
 		
 		$codeToRun = "<script type=\"text/javascript\">$(document).ready(function() { $('pre').each(function(i, block) { hljs.highlightBlock(block); });});</script>";
 
